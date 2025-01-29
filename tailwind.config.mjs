@@ -8,13 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#1848AD",
+        primary: "#11337A",
         dark: "#1F2833",
-        middle: "#4D637B"
+        middle: "#4D637B",
+        light: "#6D8CAD",
       },
     },
   },
-  plugins: [
-    require('tailwindcss-rtl'),
-  ],
+  plugins: [require("tailwindcss-rtl")],
 };

@@ -1,7 +1,8 @@
 import "./globals.css";
-import { LanguageProvider } from './context/LanguageContext';
-import ClientWrapper from './components/ClientWrapper';
-import Navbar from './components/Navbar';
+import { LanguageProvider } from "./context/LanguageContext";
+import ClientWrapper from "./components/ClientWrapper";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "StudySmart",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
           <ClientWrapper>
             <Navbar />
             <main>{children}</main>
+            <Footer />
           </ClientWrapper>
         </LanguageProvider>
       </body>

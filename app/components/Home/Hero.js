@@ -1,0 +1,55 @@
+"use client";
+
+import Image from "next/image";
+
+export default function Hero() {
+  return (
+    <section className="min-h-screen bg-primary flex items-center justify-center px-4 md:px-8 md:py-[75px] py-[36px]">
+      <div className="max-w-[1280px] w-full flex flex-col md:flex-row items-center gap-[40px] md:gap-12 lg:gap-16">
+        {/* Left side - Circular Image */}
+        <div className="w-full xl:w-1/2 md:w-[40%] w-[278px]">
+          <div className="xl:h-[673.38px] lg:h-[540px] md:h-[490px] h-[400px] xl:w-[468px] lg:w-[340px] md:w-[300px] w-[278px] rounded-full overflow-hidden bg-[#e5f0ff] relative">
+            <Image
+              width={468}
+              height={673.38}
+              src="/assets/hero-img.svg"
+              alt="Medical Professionals"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Right side - Content */}
+        <div className="w-full md:w-[75%] text-white md:space-y-[32px] space-y-[16px] relative md:text-left text-center">
+          <h1 className="text-[28px] md:text-[39px] lg:text-[56px] font-[600] leading-[1.3]">
+            Achieve
+            <br />
+            Your Medical Dreams
+            <br />
+            with StudySmart
+          </h1>
+
+          <p className="text-[15px] sm:text-[16px] md:text-[20px] text-light font-bold">
+            Your Pathway to Success in USMLE and Beyond
+          </p>
+
+          <button
+            className="text-white font-[500] text-[18px] px-[40px] sm:py-4 py-3 rounded-full md:w-fit w-full"
+            style={{
+              background: "linear-gradient(90deg, #FF9063 0%, #FF5917 100%)",
+            }}
+          >
+            Get Started Now
+          </button>
+          <Image
+            width={110}
+            height={120}
+            src="/assets/arrow.png"
+            alt="arrow"
+            className="absolute bottom-[-70px] left-[-75px] md:block hidden"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
