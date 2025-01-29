@@ -76,7 +76,7 @@ export default function Services() {
           ))}
 
           {/* Last Cell with More Icon */}
-          <div className="md:block hidden bg-[#FCFCFC] p-[24px] flex items-center justify-center">
+          <div className="md:flex hidden bg-[#FCFCFC] p-[24px] items-center justify-center">
             <FiMoreHorizontal className="w-[20px] min-w-[20px] h-[20px] text-light" />
           </div>
         </div>
