@@ -34,7 +34,7 @@ export default function Hero() {
           </p>
 
           <button
-            className="text-white font-[500] text-[18px] px-[40px] sm:py-4 py-3 rounded-full md:w-fit w-full"
+            className="hover:shadow-lg text-white font-[500] text-[18px] px-[40px] sm:py-4 py-3 rounded-full md:w-fit w-full transition-shadow duration-400"
             style={{
               background: "linear-gradient(90deg, #FF9063 0%, #FF5917 100%)",
             }}
