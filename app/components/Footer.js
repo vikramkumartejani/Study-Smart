@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] md:gap-8 gap-[80px] md:text-left text-center">
           {/* Contact Information */}
           <div className="space-y-[32px]">
-            <h2 className="text-[18px] font-bold">Contact Information</h2>
+            <h2 className="md:text-[18px] font-bold">Contact Information</h2>
             <div className="flex flex-col gap-[38px] md:items-start items-center">
               <div className="flex items-center space-x-[8px]">
                 <Image
@@ -65,7 +65,7 @@ export default function Footer() {
                   alt="phone"
                   className="md:w-[32px] md:h-[32px] w-[24px] h-[24px]"
                 />
-                <div>
+                <div className="w-full flex gap-[8px] items-center">
                   <span className="md:flex hidden font-[300]">Phone: </span>
                   <a
                     href="tel:+15551234567"
