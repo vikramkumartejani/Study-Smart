@@ -1,31 +1,42 @@
 'use client';
+
 import { createContext, useContext, useState, useEffect } from 'react';
+import { translations } from '../translations';
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState('en');
+  const [locale, setLocale] = useState('en');
 
-  // Load saved language preference on mount
+  // Update document direction when language changes
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
-      document.documentElement.dir = savedLanguage === 'ar' ? 'rtl' : 'ltr';
-      document.documentElement.lang = savedLanguage;
-    }
-  }, []);
+    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   const toggleLanguage = () => {
-    const newLanguage = language === 'en' ? 'ar' : 'en';
-    setLanguage(newLanguage);
-    localStorage.setItem('language', newLanguage);
-    document.documentElement.dir = newLanguage === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = newLanguage;
+    setLocale(prev => prev === 'en' ? 'ar' : 'en');
+  };
+
+  const t = (key) => {
+    try {
+      const keys = key.split('.');
+      let value = translations[locale];
+      
+      for (const k of keys) {
+        value = value[k];
+        if (value === undefined) return key;
+      }
+      
+      return value;
+    } catch (error) {
+      console.error(`Translation missing for key: ${key}`);
+      return key;
+    }
   };
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+    <LanguageContext.Provider value={{ locale, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -33,8 +44,8 @@ export function LanguageProvider({ children }) {
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+  if (!context) {
+    throw new Error('useLanguage must be used within LanguageProvider');
   }
   return context;
 }; 
