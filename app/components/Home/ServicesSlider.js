@@ -125,7 +125,7 @@ export default function ServicesSlider() {
                 {activeTab === index && (
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white">
                     <div
-                      className="h-full bg-[#FF5917] transition-all duration-50"
+                      className="h-full bg-secondary transition-all duration-50"
                       style={{ width: `${progress}%` }}
                     />
                   </div>

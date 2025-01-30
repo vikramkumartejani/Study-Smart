@@ -39,7 +39,7 @@ export default function DiscoverSection() {
               className="w-full h-auto rounded-[16px]"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-[#FF5917] rounded-full flex items-center justify-center ps-[4px] cursor-pointer hover:bg-[#f4511e] transition-colors duration-200 w-[80px] h-[80px]">
+              <div className="bg-secondary rounded-full flex items-center justify-center ps-[4px] cursor-pointer hover:bg-[#f4511e] transition-colors duration-200 w-[80px] h-[80px]">
                 <Image
                   src="/assets/play-icon.svg"
                   alt="play-icon"

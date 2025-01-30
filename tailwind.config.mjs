@@ -12,6 +12,7 @@ export default {
         dark: "#1F2833",
         middle: "#4D637B",
         light: "#6D8CAD",
+        secondary: "#FF5917",
       },
       fontFamily: {
         montagu: ["Montagu Slab", "serif"],

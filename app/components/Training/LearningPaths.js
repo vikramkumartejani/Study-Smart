@@ -24,41 +24,34 @@ export default function LearningPaths() {
   ];
 
   return (
-    <section className="py-16 px-4">
+    <section className="bg-[#FCFCFC] px-4 md:px-8 md:py-[100px] py-[50px]">
       <div className="max-w-[1280px] mx-auto">
-        <h2 className="text-[32px] font-bold text-center mb-4">
+        <h2 className="text-[28px] sm:text-[30px] font-bold text-center text-dark mb-[10px]">
           Explore StudySmart's Diverse Learning Paths
         </h2>
-        <p className="text-gray-600 text-center text-lg mb-16">
+        <p className="text-center text-[18px] sm:text-[20px] font-[300] text-middle mb-[56px] md:mb-[80px]">
           Navigate Your Educational Journey with Confidence
         </p>
 
         <div className="relative flex md:flex-row flex-col justify-between items-start gap-[2rem]">
           {/* Dashed line connecting all points */}
-          <div className="absolute top-[40px] left-[70px] right-[70px] h-[2px] border-t-2 border-dashed border-gray-300" />
+          <div className="absolute md:top-[46px] top-0 md:left-[70px] sm:left-[46px] left-[41px] md:right-[70px] md:h-[2px] h-full md:w-auto w-[2px] md:border-t md:border-r-0 border-r border-dashed border-[#00000033]" />
 
           {paths.map((path, index) => (
             <div
               key={index}
-              className="relative flex md:flex-col flex-row items-center w-full max-w-[300px] mx-auto z-10 gap-4"
+              className="relative flex md:flex-col flex-row items-center w-full md:max-w-[300px] mx-auto z-10 gap-4 md:gap-2"
             >
-              <div className="flex items-center justify-center w-20 min-w-[80px] h-20 rounded-full border-4 border-[#FF5917] bg-white mb-4">
-                <span className="text-2xl font-bold">{path.number}</span>
+              <div className="flex items-center justify-center sm:w-[95px] w-[85px] sm:min-w-[95px] min-w-[85px] sm:h-[95px] h-[85px] rounded-full sm:border-[10px] border-[8px] border-secondary bg-white">
+                <span className="text-[30px] font-bold text-dark">
+                  {path.number}
+                </span>
               </div>
-              <p className="text-center text-sm font-medium">{path.title}</p>
+              <p className="text-center font-[400] text-dark">{path.title}</p>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Responsive styles */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .absolute {
-            display: none;
-          }
-        }
-      `}</style>
     </section>
   );
 }
