@@ -8,11 +8,11 @@ export default function Hero() {
       <div className="max-w-[1280px] w-full flex flex-col md:flex-row items-center gap-[40px] md:gap-12 lg:gap-16">
         {/* Left side - Circular Image */}
         <div className="w-full xl:w-1/2 md:w-[40%] w-[278px]">
-          <div className="xl:h-[673.38px] lg:h-[540px] md:h-[490px] h-[400px] xl:w-[468px] lg:w-[340px] md:w-[300px] w-[278px] rounded-full overflow-hidden bg-[#e5f0ff] relative">
+          <div className="xl:h-[673.38px] lg:h-[540px] bg-[#CBF2FE] md:h-[490px] h-[400px] xl:w-[468px] lg:w-[340px] md:w-[300px] w-[278px] rounded-full overflow-hidden bg-[#e5f0ff] relative">
             <Image
               width={468}
               height={673.38}
-              src="/assets/hero-img.svg"
+              src="/assets/hero-img.png"
               alt="Medical Professionals"
               className="w-full h-full object-cover"
             />
