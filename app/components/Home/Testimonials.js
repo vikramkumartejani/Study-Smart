@@ -97,9 +97,9 @@ export default function Testimonials() {
               },
             }}
           >
-            {testimonials.map((testimonial) => (
+            {testimonials.map((testimonial, index) => (
               <SwiperSlide
-                key={testimonial.id}
+                key={testimonial.id + index}
                 className="swiper-slide-custom pb-[35px] px-[12px]"
               >
                 <div className="testimonial-box bg-white rounded-[16px] p-6 min-h-[260px] flex flex-col transform transition-all duration-300 gap-[24px] lg:max-w-full md:max-w-[650px] max-w-[320px] mx-auto">
