@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { translations } from '../translations';
 import { IoLanguage } from "react-icons/io5";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -14,21 +13,20 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isLangOpen, setIsLangOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const { language, toggleLanguage } = useLanguage();
-    const t = translations[language];
+    const { locale, toggleLanguage, t } = useLanguage();
     const langDropdownRef = useRef(null);
     const pathname = usePathname();
 
-    const navLinks = [
-        { href: '/', label: t.home },
-        { href: '/training', label: t.training },
-        { href: '/consulting', label: t.consulting },
-        { href: '/study-groups', label: t.studyGroups },
-        { href: '/coaching', label: t.coaching },
-        { href: '/professional-services', label: t.professionalServices },
-        { href: '/mag', label: t.mag },
-        { href: '/about', label: t.about },
-        { href: '/contact-us', label: t.contact },
+    const navItems = [
+        { name: t('home'), href: '/' },
+        { name: t('training'), href: '/training' },
+        { name: t('consulting'), href: '/consulting' },
+        { name: t('studyGroups'), href: '/study-groups' },
+        { name: t('coaching'), href: '/coaching' },
+        { name: t('professionalServices'), href: '/services' },
+        { name: t('mag'), href: '/mag' },
+        { name: t('about'), href: '/about' },
+        { name: t('contact'), href: '/contact' },
     ];
 
     useEffect(() => {
@@ -68,7 +66,7 @@ export default function Navbar() {
                         : "0px 15px 20px 0px #0D0D0D0D"
                 }}
             >
-                <div className="max-w-[1440px] mx-auto px-4 sm:px-6 xl:px-8 py-4">
+                <div className={`max-w-[1440px] mx-auto px-4 sm:px-6 xl:px-8 py-4 ${locale === 'ar' ? 'rtl' : 'ltr'}`}>
                     <div className="flex justify-between">
                         <div className="flex items-center">
                             <Link href="/" className="flex-shrink-0">
@@ -85,14 +83,14 @@ export default function Navbar() {
 
                         {/* Desktop Menu */}
                         <div className="hidden xl:flex items-center space-x-6 rtl:space-x-reverse">
-                            {navLinks.map((link, index) => (
+                            {navItems.map((item, index) => (
                                 <Link
                                     key={index}
-                                    href={link.href}
-                                    className={`text-[16px] leading-[20px] ${pathname === link.href ? 'font-normal' : 'font-light'
+                                    href={item.href}
+                                    className={`text-[16px] leading-[20px] ${pathname === item.href ? 'font-normal' : 'font-light'
                                         } text-dark`}
                                 >
-                                    {link.label}
+                                    {item.name}
                                 </Link>
                             ))}
 
@@ -104,7 +102,7 @@ export default function Navbar() {
                                 className="flex items-center space-x-1 text-gray-600 hover:text-blue-600"
                             >
                                 <IoLanguage className="w-4 h-4" />
-                                <span>{language.toUpperCase()}</span>
+                                <span>{locale.toUpperCase()}</span>
                                 <IoChevronDownOutline
                                     className={`w-4 h-4 transition-transform duration-200 ${isLangOpen ? 'rotate-180' : ''}`}
                                 />
@@ -118,7 +116,7 @@ export default function Navbar() {
                                             toggleLanguage();
                                             setIsLangOpen(false);
                                         }}
-                                        className={`block w-full px-4 py-2 text-sm text-left hover:bg-gray-50 ${language === 'ar' ? 'text-gray-600' : 'text-blue-600'}`}
+                                        className={`block w-full px-4 py-2 text-sm text-left hover:bg-gray-50 ${locale === 'ar' ? 'text-gray-600' : 'text-blue-600'}`}
                                     >
                                         EN
                                     </button>
@@ -127,7 +125,7 @@ export default function Navbar() {
                                             toggleLanguage();
                                             setIsLangOpen(false);
                                         }}
-                                        className={`block w-full px-4 py-2 text-sm text-left hover:bg-gray-50 ${language === 'en' ? 'text-gray-600' : 'text-blue-600'}`}
+                                        className={`block w-full px-4 py-2 text-sm text-left hover:bg-gray-50 ${locale === 'en' ? 'text-gray-600' : 'text-blue-600'}`}
                                     >
                                         عربي
                                     </button>
@@ -141,7 +139,7 @@ export default function Navbar() {
                                 onClick={() => setIsOpen(!isOpen)}
                                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-600"
                             >
-                                <span className="sr-only">{isOpen ? t.closeMenu : t.openMenu}</span>
+                                <span className="sr-only">{isOpen ? t('closeMenu') : t('openMenu')}</span>
                                 {!isOpen ? (
                                     <RxHamburgerMenu className="block h-6 w-6" />
                                 ) : (
@@ -156,25 +154,25 @@ export default function Navbar() {
                 {isOpen && (
                     <div className="xl:hidden bg-white">
                         <div className="px-2 pt-2 pb-3 space-y-1">
-                            {navLinks.map((link, index) => (
+                            {navItems.map((item, index) => (
                                 <Link
                                     key={index}
-                                    href={link.href}
-                                    className={`block px-3 py-2 text-gray-600 ${pathname === link.href ? 'font-normal' : 'font-light'
+                                    href={item.href}
+                                    className={`block px-3 py-2 text-gray-600 ${pathname === item.href ? 'font-normal' : 'font-light'
                                         }`}
                                 >
-                                    {link.label}
+                                    {item.name}
                                 </Link>
                             ))}
 
                             {/* Mobile Language Selector */}
                             <div className="px-3 py-2">
                                 <button
-                                    onClick={() => toggleLanguage()}
+                                    onClick={toggleLanguage}
                                     className="flex items-center space-x-2 text-gray-600 hover:text-blue-600"
                                 >
                                     <IoLanguage className="w-4 h-4" />
-                                    <span>{language === 'en' ? 'عربي' : 'EN'}</span>
+                                    <span>{locale === 'en' ? 'عربي' : 'EN'}</span>
                                 </button>
                             </div>
                         </div>
