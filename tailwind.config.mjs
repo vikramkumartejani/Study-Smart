@@ -13,6 +13,9 @@ export default {
         middle: "#4D637B",
         light: "#6D8CAD",
       },
+      fontFamily: {
+        montagu: ["Montagu Slab", "serif"],
+      },
     },
   },
   plugins: [require("tailwindcss-rtl")],
