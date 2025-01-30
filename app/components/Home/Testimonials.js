@@ -63,9 +63,9 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#FCFCFC] py-16 px-4">
-      <div className="max-w-[1280px] mx-auto">
-        <h2 className="text-[24px] text-dark font-bold text-center mb-[70px]">
+    <section className="bg-[#FCFCFC] px-4 md:px-8 md:py-[75px] py-[36px]">
+      <div className="max-w-[1280px] mx-auto ">
+        <h2 className="text-[24px] text-dark font-bold text-center md:mb-[70px] mb-[40px]">
           See What Our Students Are Saying
         </h2>
 
