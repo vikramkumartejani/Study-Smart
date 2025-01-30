@@ -8,9 +8,10 @@ export function Course({
   title,
   subtitle,
   description,
+  listTitle,
   courseList,
   image,
-  buttonText = "Start Your Journey",
+  buttonText,
   reverse = false,
 }) {
   return (
@@ -34,7 +35,7 @@ export function Course({
         {courseList && courseList.length > 0 && (
           <div className="mb-8">
             <h4 className="text-[20px] text-dark font-bold mb-4">
-              Course Titles:
+              {listTitle}
             </h4>
             <ul className="space-y-4">
               {courseList.map((course, index) => (
@@ -82,6 +83,7 @@ export default function CoursesSection() {
       subtitle: "Rigorous Preparation Tailored to Your Success",
       description:
         "Prepare rigorously for USMLE Step 1 and Step 2 CK exams with StudySmart's specialized online courses. Our comprehensive approach integrates advanced study materials, practice exams, and personalized feedback to ensure you excel when it matters most.",
+      listTitle: "Course Titles:",
       courseList: [
         "Comprehensive USMLE Step 1 Review Course",
         "Advanced USMLE Step 2 CK Preparation",
@@ -89,45 +91,52 @@ export default function CoursesSection() {
         "Personalized Study Plans and Feedback Sessions",
       ],
       image: "/assets/course1.jpeg",
+      buttonText: "Start Your Journey",
     },
     {
-      title: "Ace Your Medical Licensing Exams",
-      subtitle: "Expert-Guided Study Plans and Practice Tests",
+      title: "Excel in Language Proficiency with StudySmart",
+      subtitle: "Tailored Training for Healthcare Professionals",
       description:
-        "Join our structured training programs to confidently tackle the toughest medical licensing exams. Our expert-led courses, interactive study sessions, and extensive practice tests ensure you're fully prepared to succeed.",
+        "Elevate your language proficiency with StudySmart's comprehensive OET preparation course. Designed specifically for healthcare professionals, our program includes realistic simulations and personalized coaching to help you achieve exceptional OET scores.",
+      listTitle: "Course Titles:",
       courseList: [
-        "Live Interactive Webinars",
-        "Comprehensive Question Bank Access",
-        "One-on-One Tutoring Sessions",
-        "Customizable Study Roadmaps",
+        "Introduction to OET: Overview and Test Format",
+        "Language Proficiency Development for Healthcare Professionals",
+        "Effective Communication Strategies for OET",
+        "Realistic Scenario Simulations and Mock Tests",
       ],
-      image: "/assets/course1.jpeg",
+      image: "/assets/course2.jpeg",
+      buttonText: "Get Started",
     },
     {
-      title: "Master Your USMLE Journey",
-      subtitle: "Rigorous Preparation Tailored to Your Success",
+      title: "Achieve Exam Excellence with StudySmart",
+      subtitle: "Targeted Support for Professional Success",
       description:
-        "Prepare rigorously for USMLE Step 1 and Step 2 CK exams with StudySmart's specialized online courses. Our comprehensive approach integrates advanced study materials, practice exams, and personalized feedback to ensure you excel when it matters most.",
+        "Boost your exam performance with StudySmart's intensive preparation courses. Our expert-led sessions provide tailored guidance, customized study plans, and access to comprehensive resources to maximize your readiness and confidence on exam day.",
+      listTitle: "Course Titles:",
       courseList: [
-        "Comprehensive USMLE Step 1 Review Course",
-        "Advanced USMLE Step 2 CK Preparation",
-        "USMLE Practice Exam Series",
-        "Personalized Study Plans and Feedback Sessions",
+        "Medical Licensing Exam Bootcamp",
+        "Professional Certification Exam Crash Course",
+        "Strategies for High-Stakes Exam Success",
+        "Customized Study Plans and One-on-One Coaching",
       ],
       image: "/assets/course1.jpeg",
+      buttonText: "Enhance Your Skills",
     },
     {
-      title: "Ace Your Medical Licensing Exams",
-      subtitle: "Expert-Guided Study Plans and Practice Tests",
+      title: "Refine Your Academic Voice with StudySmart",
+      subtitle: "Master the Art of Research Paper Writing",
       description:
-        "Join our structured training programs to confidently tackle the toughest medical licensing exams. Our expert-led courses, interactive study sessions, and extensive practice tests ensure you're fully prepared to succeed.",
+        "Hone your academic writing skills with StudySmart's specialized courses. From mastering research methodologies to crafting impactful manuscripts, our training equips you with the tools to excel in academia and beyond.",
+      listTitle: "Course Titles:",
       courseList: [
-        "Live Interactive Webinars",
-        "Comprehensive Question Bank Access",
-        "One-on-One Tutoring Sessions",
-        "Customizable Study Roadmaps",
+        "Research Methodologies and Literature Review",
+        "Structuring and Organizing Your Research Paper",
+        "Writing Concisely and Effectively in Academic Contexts",
+        "Peer Review and Manuscript Submission Strategies",
       ],
-      image: "/assets/course1.jpeg",
+      image: "/assets/course2.jpeg",
+      buttonText: "Refine Your Writing - Contact Us",
     },
   ];
 

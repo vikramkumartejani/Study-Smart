@@ -24,9 +24,9 @@ export default function HeroSection() {
           {/* Overlapping Content Box */}
           <div className="md:absolute md:top-1/2 md:mt-0 mt-[-150px] md:right-0 md:transform md:-translate-y-1/2 w-full md:w-[60%] md:ml-[-3rem] mt-6 md:mt-0 max-w-[733px] md:px-0 px-4">
             <div className="bg-primary p-[24px] rounded-[16px] w-full md:text-left text-center">
-              <h2 className="text-white text-[28px] sm:text-[32px] md:text-[48px] font-[600] mb-4 md:mb-[24px] md:leading-[61.54px]">
+              <h1 className="text-white text-[28px] sm:text-[32px] md:text-[48px] font-[600] mb-4 md:mb-[24px] md:leading-[61.54px]">
                 Unleash Your Potential with StudySmart's Specialized Training
-              </h2>
+              </h1>
               <p className="text-white text-[18px] font-[300]">
                 StudySmart is your gateway to specialized training designed to
                 propel you towards academic excellence and career success. Dive
