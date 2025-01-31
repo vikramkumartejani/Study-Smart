@@ -106,7 +106,7 @@ const Page = () => {
             destination; we help you savor every step of the journey. Your
             expedition towards excellence begins here.
           </p>
-          <button className="w-full md:w-fit text-center mx-auto inline-flex items-center gap-2 px-[40px] py-3 rounded-full border-2 border-primary text-dark font-[500] hover:bg-primary hover:text-white transition-colors">
+          <button className="w-full md:w-fit mx-auto inline-flex items-center justify-center gap-2 px-[40px] py-3 rounded-full border-2 border-primary text-dark font-[500] hover:bg-primary hover:text-white transition-colors">
             Embark on Your Odyssey
           </button>
         </div>

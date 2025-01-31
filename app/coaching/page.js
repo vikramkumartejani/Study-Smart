@@ -1,8 +1,8 @@
 import React from "react";
-import DualPillars from "../components/Coaching/DualPillars";
 import { Course } from "../components/Training/CoursesSection";
 import Banner from "../components/Banner";
 import HeroSection from "../components/Coaching/HeroSection";
+import TwoCards from "../components/TwoCards";
 
 const page = () => {
   const Data = [
@@ -39,10 +39,32 @@ const page = () => {
       buttonText: "Author Your Success",
     },
   ];
+
+  const pillars = [
+    {
+      icon: "/assets/test.svg",
+      title: "Exam Alchemy",
+      description:
+        "Transform knowledge into stellar scores through personalized preparation strategies.",
+    },
+    {
+      icon: "/assets/board.svg",
+      title: "Interview Artistry",
+      description:
+        "Refine your narrative and presence to captivate any admissions panel.",
+    },
+  ];
+
   return (
     <div>
       <HeroSection />
-      <DualPillars />
+
+      <TwoCards
+        title="Dual Pillars of Excellence"
+        subtitle="Tailor-Made Triumphs Await"
+        cardsData={pillars}
+      />
+
       <section className="bg-[#FCFCFC] px-4 md:px-8 md:py-[100px] py-[64px]">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-[100px] md:gap-[120px]">
           {Data.map((course, index) => (
@@ -50,6 +72,7 @@ const page = () => {
           ))}
         </div>
       </section>
+
       <Banner
         imgSrc="/assets/couching-banner-img.jpeg"
         title="The StudySmart Coaching Metamorphosis"
@@ -60,6 +83,7 @@ const page = () => {
             just prepared, but evolved."
         objectPos="bottom"
       />
+
       <section className="bg-[#FCFCFC] px-4 md:px-8 py-[64px]">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-[20px] md:gap-[40px]">
           <p className="text-dark font-bold text-[20px] text-center">
@@ -68,7 +92,7 @@ const page = () => {
             atelier of excellence, where your potential is sculpted into
             mastery. Your metamorphosis commences now.
           </p>
-          <button className="w-full md:w-fit text-center mx-auto inline-flex items-center gap-2 px-[40px] py-3 rounded-full border-2 border-primary text-dark font-[500] hover:bg-primary hover:text-white transition-colors">
+          <button className="w-full md:w-fit text-center mx-auto inline-flex items-center justify-center gap-2 px-[40px] py-3 rounded-full border-2 border-primary text-dark font-[500] hover:bg-primary hover:text-white transition-colors">
             Initiate Your Evolution
           </button>
         </div>

@@ -6,7 +6,7 @@ export default function HeroSection() {
           {/* Base Image */}
           <div className="w-full h-[73vh] rounded-b-[80px] overflow-hidden mt-[-7px]">
             <img
-              src="/assets/chess.jpeg"
+              src="/assets/study-group-hero.jpeg"
               alt="Professional instructor teaching"
               className="w-full h-full object-cover object-[50%_80%]"
             />
@@ -15,18 +15,18 @@ export default function HeroSection() {
           {/* Overlapping Content Box */}
           <div className="w-full px-4">
             <div className="max-w-[1280px] mx-auto w-full">
-              <div className="bg-primary p-[24px] md:p-[40px] rounded-[16px] w-full text-center max-w-[852px] mx-auto mt-[-150px]">
+              <div className="bg-secondary p-[24px] md:p-[40px] rounded-[16px] w-full text-center max-w-[852px] mx-auto mt-[-150px]">
                 <h4 className="md:text-[24px] text-white font-[600] font-montagu mb-2">
-                  Sculpt Your Success:
+                  Knowledge Synergy:
                 </h4>
                 <h1 className="text-white text-[28px] sm:text-[32px] md:text-[48px] font-[600] font-montagu mb-4 md:mb-[24px] md:leading-[61.54px]">
-                  StudySmart's Precision Coaching
+                  Collaborative and Collective Learning at StudySmart
                 </h1>
                 <p className="text-white text-[18px] font-[300]">
-                  Embark on a bespoke developmental odyssey with StudySmart's
-                  finely-tuned coaching programs. Our expert mentors craft
-                  individualized strategies to elevate your performance in exams
-                  and interviews alike.
+                  Dive into a world of shared knowledge and collective growth
+                  with StudySmart's innovative study groups. Our dual-track
+                  approach offers tailored experiences for both intensive
+                  academic review and groundbreaking research endeavors.
                 </p>
               </div>
             </div>
