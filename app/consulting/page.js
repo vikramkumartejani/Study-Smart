@@ -5,6 +5,7 @@ import { FiCheck } from "react-icons/fi";
 import { BsArrowRight } from "react-icons/bs";
 import Image from "next/image";
 import TrajectoryMapping from "../components/Consulting/TrajectoryMapping";
+import Roadmap from "../components/Consulting/RoadMap";
 
 const Page = () => {
   const Data = [
@@ -30,6 +31,7 @@ const Page = () => {
   return (
     <div>
       <HeroSection />
+      <Roadmap />
       <TrajectoryMapping />
       <section className="bg-[#FCFCFC] px-4 md:px-8 md:py-[100px] py-[64px]">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-[100px] md:gap-[120px]">
