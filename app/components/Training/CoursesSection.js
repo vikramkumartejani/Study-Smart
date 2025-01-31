@@ -59,7 +59,7 @@ export function Course({
       {/* Image Side */}
       <div className="flex-1">
         <div
-          className={`relative h-[419px] lg:h-[500px] lg:w-[500px] rounded-[32px] overflow-hidden ${
+          className={`relative h-[398px] md:h-[419px] lg:h-[500px] lg:w-[500px] rounded-[32px] overflow-hidden ${
             reverse ? "md:me-auto" : "md:ms-auto"
           }`}
         >
