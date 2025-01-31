@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../components/StudyGroups/HeroSection";
 import TwoCards from "../components/TwoCards";
 import { Course } from "../components/Training/CoursesSection";
+import StudySmartAdvantage from "../components/StudyGroups/StudySmartAdvantage";
 
 const page = () => {
   const Data = [
@@ -18,7 +19,7 @@ const page = () => {
         "Concept Mapping Sessions",
         "Peer Teaching Rotations",
       ],
-      image: "/assets/alchemy.png",
+      image: "/assets/study-circle.jpeg",
       buttonText: "Join a Study Circle",
     },
     {
@@ -34,7 +35,7 @@ const page = () => {
         "Data Analysis Clinics",
         "Manuscript Development Labs",
       ],
-      image: "/assets/artistry.jpeg",
+      image: "/assets/research-group.jpeg",
       buttonText: "Explore Research Opportunities",
     },
   ];
@@ -57,11 +58,13 @@ const page = () => {
   return (
     <div>
       <HeroSection />
+
       <TwoCards
         title="Two Paths, One Goal: Elevate Your Learning"
         subtitle="Choose Your Collaborative Adventure"
         cardsData={twoPathsData}
       />
+
       <section className="bg-[#FCFCFC] px-4 md:px-8 md:py-[100px] py-[64px]">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-[100px] md:gap-[120px]">
           {Data.map((course, index) => (
@@ -69,7 +72,9 @@ const page = () => {
           ))}
         </div>
       </section>
-      Study Smart
+
+      <StudySmartAdvantage />
+
       <section className="bg-[#FCFCFC] px-4 md:px-8 py-[64px]">
         <div className="max-w-[952px] mx-auto flex flex-col gap-[20px] md:gap-[40px]">
           <p className="text-dark font-bold text-[20px] text-center">
