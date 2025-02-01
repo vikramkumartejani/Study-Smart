@@ -13,7 +13,7 @@ export default function MenuLinks() {
         { name: t('consulting'), href: '/consulting' },
         { name: t('studyGroups'), href: '/study-groups' },
         { name: t('coaching'), href: '/coaching' },
-        { name: t('professionalServices'), href: '/services' },
+        { name: t('professionalServices'), href: '/professional-services' },
         { name: t('mag'), href: '/mag' },
         { name: t('about'), href: '/about' },
         { name: t('contact'), href: '/contact' },

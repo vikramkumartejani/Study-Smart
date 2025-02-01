@@ -10,6 +10,46 @@ const en = {
     mag: 'Mag',
     about: 'About',
     contact: 'Contact Us',
+    contactPage: {
+        title: 'Connect with StudySmart',
+        subtitle: 'Your Partner in Medical Education Excellence',
+        description: "At StudySmart, we're committed to supporting your journey through medical education. We welcome your inquiries and look forward to assisting you in achieving your goals.",
+        contactInfo: {
+            title: 'Contact Information',
+            subtitle: 'Our dedicated team is ready to address your questions and provide support:',
+            email: 'Email:',
+            phone: 'Phone:',
+            businessHours: 'Business Hours',
+            businessHoursText: 'Monday to Friday, 9:00 AM - 6:00 PM EST'
+        },
+        location: {
+            title: 'Our Location',
+            visitText: 'Visit our main office:',
+            center: 'StudySmart Educational Center',
+            address: '123 Medical Avenue, Suite 456',
+            city: 'New York, NY 10001',
+            country: 'United States'
+        },
+        form: {
+            title: 'Inquiry Form',
+            subtitle: 'We value your input. Please use the form below to send us your message.',
+            submitButton: 'Submit Inquiry'
+        },
+        social: {
+            title: 'Connect on Professional Networks',
+            subtitle: 'Stay informed about the latest developments in medical education'
+        },
+        newsletter: {
+            title: 'Stay Informed',
+            subtitle: 'Subscribe to our newsletter for updates on courses, study strategies, and trends in medical education.',
+            placeholder: 'Email Address...',
+            button: 'Subscribe'
+        },
+        cta: {
+            text: 'Your success in medical education is our priority. Contact StudySmart today to explore how we can support your professional journey.',
+            button: 'Contact StudySmart'
+        }
+    },
     language: 'العربية',
     openMenu: 'Open main menu',
     closeMenu: 'Close main menu',
@@ -103,6 +143,74 @@ const en = {
             { name: 'LinkedIn', href: '#' },
             { name: 'Twitter', href: '#' }
         ]
+    },
+    professionalServicesPage: {
+        hero: {
+            title: "Empower Your Career with StudySmart's Professional Services",
+            description: "At StudySmart, we provide comprehensive support for your medical career. Our range of professional services is designed to assist you in every aspect of your professional journey, from project assistance to immigration services and beyond."
+        },
+        navigation: {
+            title: "Navigate the Path to Professional Success",
+            subtitle: "Expert Assistance for Every Step of Your Journey"
+        },
+        services: {
+            projectAssistance: {
+                title: "Project Assistance",
+                description: "Gain the support you need to excel in your projects with our expert guidance and resources."
+            },
+            immigration: {
+                title: "Immigration Services",
+                description: "Simplify your transition with our comprehensive immigration support, including visa applications, travel arrangements, and settlement services."
+            },
+            patent: {
+                title: "Patent Registration",
+                description: "Secure your innovations with our patent registration and consultation services. We ensure your ideas are protected and recognized."
+            },
+            resume: {
+                title: "Resume Building",
+                description: "Enhance your academic and professional profile with our expert resume building services and networking opportunities."
+            },
+            research: {
+                title: "Research Project Investment",
+                description: "Get the leadership and funding you need for your research projects with our investment and support services."
+            }
+        },
+        sections: {
+            project: {
+                title: "Streamline Your Professional Endeavors",
+                subtitle: "Comprehensive Project Assistance",
+                description: "Whether you're working on a medical research project or a professional initiative, our project assistance services provide the expertise and resources necessary to ensure your success. Our team of experienced professionals is here to guide you through every phase of your project.",
+                cta: "Discover Project Assistance"
+            },
+            immigration: {
+                title: "Simplify Your Journey with Expert Immigration Services",
+                subtitle: "Comprehensive Support for a Smooth Transition",
+                description: "Navigating the complexities of immigration can be challenging. StudySmart offers extensive support to help you through the process, from Green Card applications to visa extensions and more. Our dedicated team ensures you have the assistance you need to make your transition as seamless as possible.",
+                cta: "Explore Immigration Services"
+            },
+            patent: {
+                title: "Protect Your Innovations with Patent Registration",
+                subtitle: "Secure Your Intellectual Property",
+                description: "Ensure your innovations are protected with our patent registration services. StudySmart provides the guidance and support necessary to navigate the patent process, helping you secure your intellectual property and collaborate with industry experts.",
+                cta: "Learn About Patent Services"
+            },
+            resume: {
+                title: "Enhance Your Professional Profile",
+                subtitle: "Effective Resume Building and Networking",
+                description: "Craft a compelling resume that highlights your strengths and achievements with our expert services. Additionally, take advantage of our networking opportunities to connect with professionals and academics in your field, enhancing your career prospects.",
+                cta: "Build Your Resume"
+            },
+            research: {
+                title: "Invest in Your Research",
+                subtitle: "Leadership and Funding for Your Projects",
+                description: "StudySmart supports your research endeavors by providing leadership and investment opportunities. Our services are designed to help you secure funding and guidance for your projects, ensuring they reach their full potential.",
+                cta: "Secure Research Investment"
+            }
+        },
+        cta: {
+            text: "At StudySmart, we are dedicated to providing the tools and support you need to excel in your professional journey. Explore our professional services to find out how we can assist you in achieving your career goals.",
+            button: "Get Started with Professional Services"
+        }
     }
 };
 

@@ -53,14 +53,14 @@ export default function MobileMenu() {
                     </div>
                     
                     <div className="p-3.5 border-b flex items-center justify-between">
-                        <h2 className='text-base font-light text-dark'>Language</h2>
+                        <h2 className='text-base font-light text-dark'>{t('language')}</h2>
                         <button
                             onClick={toggleLanguage}
                             className="flex items-center justify-between gap-4 py-2"
                         >
-                            <span className='text-sm font-light text-dark'>{locale === 'en' ? 'EN' : 'فا'}</span>
+                            <span className='text-sm font-light text-dark'>{locale === 'en' ? 'EN' : 'عربي'}</span>
                             <span className="bg-[#F2F2F2] text-primary text-sm font-normal h-[34px] w-[36px] rounded-lg flex items-center justify-center">
-                                {locale === 'en' ? 'فا' : 'EN'}
+                                {locale === 'en' ? 'عربي' : 'EN'}
                             </span>
                         </button>
                     </div>
@@ -76,7 +76,15 @@ export default function MobileMenu() {
                                 }`}
                             >
                                 <span>{item.name}</span>
-                                <span className="text-gray-400"><Image src='/assets/arrow-right.svg' alt='arrow-right' width={16} height={16} /></span>
+                                <span className="text-gray-400">
+                                    <Image 
+                                        src='/assets/arrow-right.svg' 
+                                        alt='arrow-right' 
+                                        width={16} 
+                                        height={16} 
+                                        className={locale === 'ar' ? 'rotate-180' : ''}
+                                    />
+                                </span>
                             </Link>
                         ))}
                     </div>

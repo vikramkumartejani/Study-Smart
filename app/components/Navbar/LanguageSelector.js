@@ -34,7 +34,7 @@ export default function LanguageSelector() {
             </button>
 
             {isLangOpen && (
-                <div className="absolute right-0 top-14 py-2 w-24 bg-white rounded-lg shadow-xl border border-gray-100">
+                <div className="absolute right-0 top-8 py-2 w-24 bg-white rounded-lg shadow-xl border border-gray-100">
                     <button
                         onClick={() => {
                             toggleLanguage();
