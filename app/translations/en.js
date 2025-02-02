@@ -211,6 +211,103 @@ const en = {
             text: "At StudySmart, we are dedicated to providing the tools and support you need to excel in your professional journey. Explore our professional services to find out how we can assist you in achieving your career goals.",
             button: "Get Started with Professional Services"
         }
+    },
+    magPage: {
+        hero: {
+            date: '02 MAY 2024',
+            title: 'Life is a flower of which love is the honey',
+            description: 'when while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees.',
+            readMore: 'Read More',
+            seeAll: 'See All'
+        },
+        sections: {
+            recentArticles: {
+                title: 'Recent Articles',
+                articles: [
+                    {
+                        title: 'Start your first week of a new job like a boss',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'Pioneering a new twist on a co-working modeles',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'The white-label software model in fintech',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'Investment in your life, health and wealth',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'Control about the blind texts it almost unorthographics',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'There are many variations of passages of available not the majority have suffered',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'Feel the charm of existence in this spot, which was created for the bliss of souls like mine',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'Life is a flower of which love is the honey',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'Reach the utmost mindfulness and body wellness',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'Plan your training with personal trainer online and easy',
+                        date: '02 MAY 2024'
+                    }
+                ]
+            },
+            quickLinks: {
+                title: 'Quick Links',
+                articles: [
+                    {
+                        title: 'Control about the blind texts it almost unorthographics',
+                        description: 'There are many variations of passages of available not the majority have suffered alteration',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'There are many variations of passages available',
+                        description: 'Alteration in some form, by injected humour sheets containing Ipsum passages and more',
+                        date: '02 MAY 2024'
+                    },
+                    {
+                        title: 'Feel the charm of existence in this spot',
+                        description: 'There are many variations of passages of available not the majority have suffered alteration',
+                        date: '02 MAY 2024'
+                    }
+                ]
+            },
+            trendingTopics: {
+                title: 'Trending Topics',
+                topics: [
+                    {
+                        title: 'It takes what it takes to end something',
+                        description: 'Alteration in some form, by injected humour sheets containing Ipsum passages and more'
+                    },
+                    {
+                        title: 'The best street style looks from Paris fashion week 2024',
+                        description: 'There are many variations of passages of available not the majority have suffered alteration'
+                    },
+                    {
+                        title: '9 Most awesome Blue lake with snow mountain',
+                        description: 'when while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface'
+                    },
+                    {
+                        title: 'How to have a happy, mindful holiday season',
+                        description: 'There are many variations of passages of available not the majority have suffered alteration'
+                    }
+                ]
+            }
+        }
     }
 };
 
