@@ -8,27 +8,27 @@ export default function ProfessionalServices() {
 
     const services = [
         {
-            icon: '/assets/project-icon.svg',
+            icon: '/assets/user-octagon.svg',
             title: t('professionalServicesPage.services.projectAssistance.title'),
             description: t('professionalServicesPage.services.projectAssistance.description')
         },
         {
-            icon: '/assets/immigration-icon.svg',
+            icon: '/assets/user-octagon.svg',
             title: t('professionalServicesPage.services.immigration.title'),
             description: t('professionalServicesPage.services.immigration.description')
         },
         {
-            icon: '/assets/patent-icon.svg',
+            icon: '/assets/user-octagon.svg',
             title: t('professionalServicesPage.services.patent.title'),
             description: t('professionalServicesPage.services.patent.description')
         },
         {
-            icon: '/assets/resume-icon.svg',
+            icon: '/assets/user-octagon.svg',
             title: t('professionalServicesPage.services.resume.title'),
             description: t('professionalServicesPage.services.resume.description')
         },
         {
-            icon: '/assets/research-icon.svg',
+            icon: '/assets/user-octagon.svg',
             title: t('professionalServicesPage.services.research.title'),
             description: t('professionalServicesPage.services.research.description')
         }
@@ -77,19 +77,19 @@ export default function ProfessionalServices() {
         <div className={`w-full ${locale === 'ar' ? 'rtl' : 'ltr'}`}>
             {/* Hero Section */}
             <section className="relative bg-[#A2BDE1] overflow-hidden -mt-10 rounded-b-[80px]">
-                <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+                <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-40 md:pt-[250px] lg:pt-48 xl:pt-20">
                     <div className="flex flex-col lg:flex-row items-center gap-8">
-                        <div className="lg:w-1/2">
-                            <h1 className="text-[40px] leading-[50px] font-bold text-dark mb-4">
+                        <div className="lg:w-1/2 sm:text-left text-center">
+                            <h1 className="text-[25px] sm:text-[35px] xl:text-[48px] leading-[35px] sm:leading-[45px] xl:leading-[61px] font-semibold text-white mb-4">
                                 {t('professionalServicesPage.hero.title')}
                             </h1>
-                            <p className="text-[#4D637B] text-lg">
+                            <p className="text-dark text-base sm:text-lg leading-[22.5px] font-light">
                                 {t('professionalServicesPage.hero.description')}
                             </p>
                         </div>
                         <div className="lg:w-1/2">
                             <Image
-                                src="/assets/professional-services-hero.png"
+                                src="/assets/professional.png"
                                 alt="Professional Services"
                                 width={600}
                                 height={400}
@@ -101,7 +101,7 @@ export default function ProfessionalServices() {
             </section>
 
             {/* Services Navigation */}
-            <section className="py-16">
+            <section className="py-24">
                 <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-[30px] leading-[37.5px] font-bold text-dark mb-4">
@@ -111,9 +111,9 @@ export default function ProfessionalServices() {
                             {t('professionalServicesPage.navigation.subtitle')}
                         </p>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {services.map((service, index) => (
-                            <div key={index} className="text-center p-6 bg-white">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1440px] mx-auto">
+                        {services.slice(0, 3).map((service, index) => (
+                            <div key={index} className="text-center px-4 py-6 md:p-6 bg-white">
                                 <div className="mb-4">
                                     <Image
                                         src={service.icon}
@@ -123,7 +123,25 @@ export default function ProfessionalServices() {
                                         className="mx-auto"
                                     />
                                 </div>
-                                <h3 className="text-[24px] leading-[30px] font-bold mb-4">{service.title}</h3>
+                                <h3 className="text-[20px] leading-[25px] sm:text-[24px] sm:leading-[30px] font-bold mb-4">{service.title}</h3>
+                                <p className="text-dark text-[16px] leading-[20px] font-light">{service.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                    {/* Bottom Two Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:max-w-[900px] mx-auto mt-6 lg:mt-12">
+                        {services.slice(3, 5).map((service, index) => (
+                            <div key={index} className="text-center px-4 py-6 md:p-6 bg-white">
+                                <div className="mb-4">
+                                    <Image
+                                        src={service.icon}
+                                        alt={service.title}
+                                        width={64}
+                                        height={64}
+                                        className="mx-auto"
+                                    />
+                                </div>
+                                <h3 className="text-[20px] leading-[25px] sm:text-[24px] sm:leading-[30px] font-bold mb-4">{service.title}</h3>
                                 <p className="text-dark text-[16px] leading-[20px] font-light">{service.description}</p>
                             </div>
                         ))}
