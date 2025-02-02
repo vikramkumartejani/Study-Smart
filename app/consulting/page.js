@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Banner from "../components/Banner";
 import HeroSection from "../components/Consulting/HeroSection";
@@ -6,25 +7,27 @@ import { BsArrowRight } from "react-icons/bs";
 import Image from "next/image";
 import TrajectoryMapping from "../components/Consulting/TrajectoryMapping";
 import Roadmap from "../components/Consulting/RoadMap";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const Page = () => {
+  const { t } = useLanguage();
+
   const Data = [
     {
-      subtitle: "Milestone Illumination: ",
-      title: "Spotlighting Your Success Markers",
-      tags: "Clarity, Insight, Direction",
-      description:
-        "Illuminate the pivotal moments in your journey with our Milestone Illumination service. We'll cast light on the critical junctures ahead, ensuring you're equipped to make informed decisions at every turn.",
-      listTitle: "Beacon Points:",
+      subtitle: t("consulting.cards.milestone.subtitle"),
+      title: t("consulting.cards.milestone.title"),
+      tags: t("consulting.cards.milestone.tags"),
+      description: t("consulting.cards.milestone.description"),
+      listTitle: t("consulting.cards.milestone.listTitle"),
       courseList: [
-        "Exam landscape surveying",
-        "Interview terrain scouting",
-        "Research realm exploration",
-        "Career crossroads clarification",
-        "Continuous progress tracking",
+        t("consulting.cards.milestone.list.item1"),
+        t("consulting.cards.milestone.list.item2"),
+        t("consulting.cards.milestone.list.item3"),
+        t("consulting.cards.milestone.list.item4"),
+        t("consulting.cards.milestone.list.item5"),
       ],
       image: "/assets/spotlighting.jpeg",
-      buttonText: "Illuminate Your Path",
+      buttonText: t("consulting.cards.milestone.buttonText"),
     },
   ];
 
@@ -82,7 +85,7 @@ const Page = () => {
                 <div className="relative h-[398px] md:h-[419px] lg:h-[500px] lg:w-[500px] rounded-[32px] overflow-hidden lg:ms-auto">
                   <Image
                     src={course.image}
-                    alt="Course illustration"
+                    alt={t("consulting.cards.milestone.imageAlt")}
                     fill
                     className="object-cover"
                   />
@@ -94,20 +97,17 @@ const Page = () => {
       </section>
       <Banner
         imgSrc="/assets/consulting-banner-img.jpeg"
-        title="The StudySmart Consulting Expedition"
-        para="At StudySmart, we believe in empowering you to chart your own course. Our consulting services don't just provide answers; they equip you with the compass and map to navigate your unique journey. From the first steps of exam preparation to the summit of your career aspirations, our tailored guidance ensures you're always moving in the right direction."
+        title={t("consulting.banner.title")}
+        para={t("consulting.banner.description")}
         objectPos="center"
       />
       <section className="bg-[#FCFCFC] px-4 md:px-8 py-[64px]">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-[20px] md:gap-[40px]">
           <p className="text-dark font-bold text-[20px] text-center max-w-[952px] mx-auto">
-            In the vast sea of medical education and career advancement, let
-            StudySmart be your North Star. We don't just show you the
-            destination; we help you savor every step of the journey. Your
-            expedition towards excellence begins here.
+            {t("consulting.footer.text")}
           </p>
           <button className="w-full md:w-fit mx-auto inline-flex items-center justify-center gap-2 px-[40px] py-3 rounded-full border-2 border-primary text-dark font-[500] hover:bg-primary hover:text-white transition-colors">
-            Embark on Your Odyssey
+            {t("consulting.footer.buttonText")}
           </button>
         </div>
       </section>

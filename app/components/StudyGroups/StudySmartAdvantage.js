@@ -1,55 +1,58 @@
 "use client";
 import Image from "next/image";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function StudySmartAdvantage() {
+  const { t } = useLanguage();
+
   const studyAndReasearchData = [
     {
-      title: "Study Circles",
+      title: t("studyGroups.advantage.studyCircles.title"),
       bgColor: "linear-gradient(280.57deg, #0A1E47 15.22%, #1848AD 88.95%)",
       borderColor: "#1848AD",
       cards: [
         {
           icon: "/assets/group.svg",
-          text: "Master complex topics through peer discussions",
+          text: t("studyGroups.advantage.studyCircles.cards.item1"),
           position: "xl:top-10 top-4 xl:-left-20 left-[-70px]",
           width: "max-w-[200px]",
         },
         {
           icon: "/assets/rocket.svg",
-          text: "Accelerate your exam preparation",
+          text: t("studyGroups.advantage.studyCircles.cards.item2"),
           position:
             "xl:top-0 top-[-35px] xl:right-0 right-[-20px] translate-x-1/3",
           width: "max-w-[200px]",
         },
         {
           icon: "/assets/message.svg",
-          text: "Benefit from diverse perspectives and shared insights",
+          text: t("studyGroups.advantage.studyCircles.cards.item3"),
           position: "bottom-[-40px] xl:left-[10px] left-[-20]",
           width: "max-w-[246px]",
         },
       ],
     },
     {
-      title: "Research Groups:",
+      title: t("studyGroups.advantage.researchGroups.title"),
       bgColor: "linear-gradient(280.57deg, #CC4712 15.22%, #FF9063 88.95%)",
       borderColor: "#FF9063",
       cards: [
         {
           icon: "/assets/book.svg",
-          text: "Contribute to cutting-edge healthcare studies",
+          text: t("studyGroups.advantage.researchGroups.cards.item1"),
           position:
             "xl:top-[-10px] top-[-39px] xl:left-[-70px] left-[-90px] translate-x-1/3",
           width: "max-w-[200px]",
         },
         {
           icon: "/assets/stack.svg",
-          text: "Build your professional network while advancing scientific knowledge",
+          text: t("studyGroups.advantage.researchGroups.cards.item2"),
           position: "xl:left-[-50px] left-[-88px] xl:bottom-0 bottom-[-40px]",
           width: "max-w-[246px]",
         },
         {
           icon: "/assets/search.svg",
-          text: "Develop critical research skills in a supportive environment",
+          text: t("studyGroups.advantage.researchGroups.cards.item3"),
           position:
             "xl:bottom-20 bottom-2 xl:right-[-190px] right-[-200px] -translate-x-1/4",
           width: "max-w-[246px]",
@@ -63,11 +66,10 @@ export default function StudySmartAdvantage() {
       <div className="relative max-w-[1280px] mx-auto">
         <div className="text-center mb-[60px] md:mb-[120px] lg:mb-[140px]">
           <h2 className="text-[28px] sm:text-[30px] md:text-[32px] font-bold mb-4">
-            The StudySmart Advantage: Collaboration Redefined
+            {t("studyGroups.advantage.title")}
           </h2>
           <p className="text-middle text-[20px] font-[300]">
-            Experience the power of collective learning with StudySmart's
-            innovative study groups:
+            {t("studyGroups.advantage.subtitle")}
           </p>
         </div>
         <div className="md:flex hidden lg:flex-row flex-col items-center justify-between lg:gap-16 gap-[150px]">
@@ -147,8 +149,7 @@ export default function StudySmartAdvantage() {
         </div>
         <div className="flex flex-col gap-[40px] items-center justify-center md:pt-[120px] pt-[30px]">
           <p className="text-dark text-[20px] font-[300] text-center">
-            Join us to transform your academic journey and research aspirations
-            into reality.
+            {t("studyGroups.advantage.footer")}
           </p>
           <button
             className="hover:shadow-lg text-white text-[18px] font-[500] px-[40px] sm:py-4 py-3 rounded-full transition-shadow duration-400 md:w-fit w-full"
@@ -156,7 +157,7 @@ export default function StudySmartAdvantage() {
               background: "linear-gradient(90deg, #1848AD 0%, #11337A 100%)",
             }}
           >
-            Elevate Your Learning Now
+            {t("studyGroups.advantage.buttonText")}
           </button>
         </div>
       </div>

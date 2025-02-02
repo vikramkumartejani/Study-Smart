@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
-import { BiPlay } from "react-icons/bi";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function DiscoverSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="bg-primary">
       <div className="bg-[#FCFCFC] px-4 md:px-8 py-[75px] rounded-br-[64px]">
@@ -10,15 +12,11 @@ export default function DiscoverSection() {
           {/* Left Column - Text Content */}
           <div className="space-y-4 md:order-1 order-2">
             <h2 className="text-[25px] md:text-[34px] font-bold text-dark md:leading-[37.5px] leading-[36px]">
-              Discover the StudySmart Difference
+              {t("home.discover.title")}
             </h2>
 
             <p className="text-middle text-base font-[300] pb-[24px]">
-              At StudySmart, we are committed to guiding aspiring medical
-              professionals to success. Our expert-led courses, supportive study
-              groups, and personalized coaching services lay the foundation for
-              your achievements. From exam preparation to professional services,
-              we're here to support you at every step.
+              {t("home.discover.description")}
             </p>
 
             <button
@@ -27,7 +25,7 @@ export default function DiscoverSection() {
                 background: "linear-gradient(90deg, #1848AD 0%, #11337A 100%)",
               }}
             >
-              Learn More About Us
+              {t("home.discover.button")}
             </button>
           </div>
 
@@ -35,14 +33,14 @@ export default function DiscoverSection() {
           <div className="relative rounded-[16px] overflow-hidden md:order-2 order-1">
             <img
               src="/assets/discover-video-img.png"
-              alt="Medical consultation"
+              alt={t("home.discover.imageAlt")}
               className="w-full h-auto rounded-[16px]"
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-secondary rounded-full flex items-center justify-center ps-[4px] cursor-pointer hover:bg-[#f4511e] transition-colors duration-200 w-[80px] h-[80px]">
                 <Image
                   src="/assets/play-icon.svg"
-                  alt="play-icon"
+                  alt={t("home.discover.playIconAlt")}
                   width={54.67}
                   height={54.67}
                 />

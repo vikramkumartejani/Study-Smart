@@ -1,10 +1,13 @@
 "use client";
 
+import { useLanguage } from "@/app/context/LanguageContext";
 import Image from "next/image";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
-    <section className="min-h-screen bg-primary flex items-center justify-center px-4 md:px-8 md:py-[75px] py-[36px]">
+    <section className="min-h-screen bg-primary flex items-center justify-center px-4 md:px-8 md:py-[75px] py-[36px] mt-[-7px]">
       <div className="max-w-[1280px] w-full flex flex-col md:flex-row items-center gap-[40px] md:gap-12 lg:gap-16">
         {/* Left side - Circular Image */}
         <div className="w-full xl:w-1/2 md:w-[40%] w-[278px]">
@@ -13,7 +16,7 @@ export default function Hero() {
               width={468}
               height={673.38}
               src="/assets/hero-img.png"
-              alt="Medical Professionals"
+              alt={t("home.hero.imageAlt")}
               className="w-full h-full object-cover"
             />
           </div>
@@ -22,15 +25,15 @@ export default function Hero() {
         {/* Right side - Content */}
         <div className="w-full md:w-[75%] text-white md:space-y-[32px] space-y-[16px] relative md:text-left text-center">
           <h1 className="text-[28px] md:text-[39px] lg:text-[56px] font-[600] leading-[1.3]">
-            Achieve
+            {t("home.hero.title1")}
             <br />
-            Your Medical Dreams
+            {t("home.hero.title2")}
             <br />
-            with StudySmart
+            {t("home.hero.title3")}
           </h1>
 
           <p className="text-[15px] sm:text-[16px] md:text-[20px] text-light font-bold">
-            Your Pathway to Success in USMLE and Beyond
+            {t("home.hero.subtitle")}
           </p>
 
           <button
@@ -39,7 +42,7 @@ export default function Hero() {
               background: "linear-gradient(90deg, #FF9063 0%, #FF5917 100%)",
             }}
           >
-            Get Started Now
+            {t("home.hero.button")}
           </button>
           <Image
             width={110}

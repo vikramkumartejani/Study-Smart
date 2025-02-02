@@ -3,61 +3,38 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const tabs = [
   {
     id: "training",
-    label: "Training",
     icon: "/assets/book-white.png",
-    title: "Master Your Studies with Comprehensive Courses",
-    description:
-      "Prepare for the USMLE Step 1 and Step 2 CK, OET, and more with our extensive range of courses. Our expert instructors and flexible online format allow you to learn at your own pace and achieve your academic goals.",
     image: "/assets/services.jpeg",
-    button: "Explore Our Courses",
   },
   {
     id: "consulting",
-    label: "Consulting",
     icon: "/assets/map-white.png",
-    title: "Expert Consulting",
-    description:
-      "Receive expert advice tailored to your specific needs. Our consulting services are designed to provide you with the insights and support necessary to succeed in your endeavors.",
     image: "/assets/services2.jpeg",
-    button: "Get Expert Advice",
   },
   {
-    id: "study-groups",
-    label: "Study Groups",
+    id: "studyGroups",
     icon: "/assets/people-white.png",
-    title: "Empower Your Learning with Collaborative Groups",
-    description:
-      "Join our peer study groups and research collaboration groups to enhance your learning experience. Engage with fellow students, share knowledge, and collaborate on projects to achieve academic excellence.",
     image: "/assets/services.jpeg",
-    button: "Join a Study Group",
   },
   {
     id: "coaching",
-    label: "Coaching Services",
     icon: "/assets/clipboard-text-white.png",
-    title: "Excel with Personalized Coaching",
-    description:
-      "Receive tailored coaching for your exam and interview preparations. Our experienced coaches provide one-on-one guidance to build your confidence and ensure success in your medical career.",
     image: "/assets/services2.jpeg",
-    button: "Learn More About Coaching",
   },
   {
     id: "professional",
-    label: "Professional Services",
     icon: "/assets/star-white.png",
-    title: "Advance Your Career with Expert Support",
-    description:
-      "Benefit from our comprehensive professional services, including project assistance, immigration support, patent registration, and more. We offer the tools and guidance you need to achieve your professional aspirations.",
     image: "/assets/services.jpeg",
-    button: "Discover Our Services",
   },
 ];
 
 export default function ServicesSlider() {
+  const { locale, t } = useLanguage();
   const [activeTab, setActiveTab] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -109,7 +86,7 @@ export default function ServicesSlider() {
                   >
                     <Image
                       src={tab.icon}
-                      alt={tab.label}
+                      alt={t(`home.servicesSlider.${tab.id}.label`)}
                       width={20}
                       height={20}
                     />
@@ -119,7 +96,7 @@ export default function ServicesSlider() {
                       activeTab === index ? "font-[500]" : "font-[300]"
                     }`}
                   >
-                    {tab.label}
+                    {t(`home.servicesSlider.${tab.id}.label`)}
                   </span>
                 </button>
                 {activeTab === index && (
@@ -139,22 +116,26 @@ export default function ServicesSlider() {
             <div className="rounded-[121px] overflow-hidden mb-8 w-[250px] h-[350px] border-[8px] border-[#0000001A]">
               <img
                 src={tabs[activeTab].image || "/placeholder.svg"}
-                alt={tabs[activeTab].title}
+                alt={t(`home.servicesSlider.${tabs[activeTab].id}.title`)}
                 className="w-full h-full object-cover"
               />
             </div>
 
             <h2 className="text-[18px] md:text-[20px] font-[500] mb-1">
-              {tabs[activeTab].title}
+              {t(`home.servicesSlider.${tabs[activeTab].id}.title`)}
             </h2>
 
             <p className="text-white font-[300] text-base mb-6">
-              {tabs[activeTab].description}
+              {t(`home.servicesSlider.${tabs[activeTab].id}.sliderDescription`)}
             </p>
 
             <button className="group inline-flex items-center gap-2 font-[500] text-[18px] bg-transparent border-2 border-white rounded-full px-[40px] py-3 text-white hover:bg-white hover:text-[#1e3a8a] transition-colors duration-200">
-              {tabs[activeTab].button}
-              <BsArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              {t(`home.servicesSlider.${tabs[activeTab].id}.button`)}
+              <BsArrowRight
+                className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${
+                  locale === "ar" ? "rotate-180" : ""
+                }`}
+              />
             </button>
           </div>
         </div>

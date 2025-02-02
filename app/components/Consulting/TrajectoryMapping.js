@@ -1,26 +1,29 @@
 import Image from "next/image";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function TrajectoryMapping() {
+  const { t } = useLanguage();
+
   const offerings = [
     {
       icon: "/assets/magic-key-offering.svg",
-      title: "Personalized path projections",
+      title: t("consulting.trajectoryMapping.offerings.item1"),
     },
     {
       icon: "/assets/map-key-offering.svg",
-      title: "Decision point navigation",
+      title: t("consulting.trajectoryMapping.offerings.item2"),
     },
     {
       icon: "/assets/black-hole-key-offering.svg",
-      title: "Resource constellation identification",
+      title: t("consulting.trajectoryMapping.offerings.item3"),
     },
     {
       icon: "/assets/scanner-key-offering.svg",
-      title: "Opportunity horizon scanning",
+      title: t("consulting.trajectoryMapping.offerings.item4"),
     },
     {
       icon: "/assets/calibration-key-offering.svg",
-      title: "Adaptive route recalibration",
+      title: t("consulting.trajectoryMapping.offerings.item5"),
     },
   ];
 
@@ -29,21 +32,18 @@ export default function TrajectoryMapping() {
       <div className="max-w-[1280px] mx-auto text-center">
         <div className="max-w-[758px] mx-auto flex flex-col gap-4 md:mb-[75px] mb-[56px] text-center">
           <h2 className="text-[28px] sm:text-[30px] sm:leading-[37.5px] leading-[36px] text-dark font-bold">
-            Trajectory Mapping: Charting Your Unique Course
+            {t("consulting.trajectoryMapping.title")}
           </h2>
           <h3 className="text-[20px] font-[300] text-middle">
-            Bespoke Blueprints for Boundless Potential
+            {t("consulting.trajectoryMapping.subtitle")}
           </h3>
           <p className="mx-auto font-[300] text-middle">
-            Our Trajectory Mapping service is your personal atlas to success.
-            Our expert cartographers of careers meticulously plot your journey,
-            considering your unique strengths, aspirations, and the
-            ever-changing landscape of medical education.
+            {t("consulting.trajectoryMapping.description")}
           </p>
         </div>
 
         <h4 className="text-[18px] font-bold text-middle mb-6">
-          Key Offerings:
+          {t("consulting.trajectoryMapping.offeringsTitle")}
         </h4>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-[24px] mb-[56px] md:mb-[75px]">
@@ -72,7 +72,7 @@ export default function TrajectoryMapping() {
             background: "linear-gradient(90deg, #1848AD 0%, #11337A 100%)",
           }}
         >
-          Plot Your Course
+          {t("consulting.trajectoryMapping.buttonText")}
         </button>
       </div>
     </section>

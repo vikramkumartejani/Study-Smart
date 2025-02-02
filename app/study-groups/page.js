@@ -1,57 +1,57 @@
+"use client";
 import React from "react";
 import HeroSection from "../components/StudyGroups/HeroSection";
 import TwoCards from "../components/TwoCards";
 import { Course } from "../components/Training/CoursesSection";
 import StudySmartAdvantage from "../components/StudyGroups/StudySmartAdvantage";
+import { useLanguage } from "@/app/context/LanguageContext";
 
-const page = () => {
+const Page = () => {
+  const { t } = useLanguage();
+
   const Data = [
     {
-      title: "Study Circles: The Art of Collective Mastery",
-      subtitle: "Unite, Discuss, Conquer",
-      description:
-        "Our Study Circles transform solitary study sessions into vibrant knowledge exchanges. Engage with peers, dissect complex topics, and reinforce your understanding through dynamic group interactions. Experience the power of shared insights and diverse perspectives.",
-      listTitle: "Features:",
+      title: t("studyGroups.courses.studyCircles.title"),
+      subtitle: t("studyGroups.courses.studyCircles.subtitle"),
+      description: t("studyGroups.courses.studyCircles.description"),
+      listTitle: t("studyGroups.courses.listTitle"),
       courseList: [
-        "Targeted Topic Marathons",
-        "Question Banks Deconstruction",
-        "Mock Exam Workshops",
-        "Concept Mapping Sessions",
-        "Peer Teaching Rotations",
+        t("studyGroups.courses.studyCircles.list.item1"),
+        t("studyGroups.courses.studyCircles.list.item2"),
+        t("studyGroups.courses.studyCircles.list.item3"),
+        t("studyGroups.courses.studyCircles.list.item4"),
+        t("studyGroups.courses.studyCircles.list.item5"),
       ],
       image: "/assets/study-circle.jpeg",
-      buttonText: "Join a Study Circle",
+      buttonText: t("studyGroups.courses.studyCircles.buttonText"),
     },
     {
-      title: "Research Groups: Pioneering Tomorrow's Healthcare",
-      subtitle: "Collaborate, Innovate, Discover",
-      description:
-        "Step into the forefront of medical advancement with our Research Groups. Connect with fellow visionaries, pool your expertise, and contribute to groundbreaking studies. From hypothesis formation to publication, experience the thrill of scientific discovery as a team.",
-      listTitle: "Features:",
+      title: t("studyGroups.courses.researchGroups.title"),
+      subtitle: t("studyGroups.courses.researchGroups.subtitle"),
+      description: t("studyGroups.courses.researchGroups.description"),
+      listTitle: t("studyGroups.courses.listTitle"),
       courseList: [
-        "Interdisciplinary Brainstorming",
-        "Literature Review Roundtables",
-        "Methodology Design Workshops",
-        "Data Analysis Clinics",
-        "Manuscript Development Labs",
+        t("studyGroups.courses.researchGroups.list.item1"),
+        t("studyGroups.courses.researchGroups.list.item2"),
+        t("studyGroups.courses.researchGroups.list.item3"),
+        t("studyGroups.courses.researchGroups.list.item4"),
+        t("studyGroups.courses.researchGroups.list.item5"),
       ],
       image: "/assets/research-group.jpeg",
-      buttonText: "Explore Research Opportunities",
+      buttonText: t("studyGroups.courses.researchGroups.buttonText"),
     },
   ];
 
   const twoPathsData = [
     {
       icon: "/assets/circles.svg",
-      title: "Study Circles",
-      description:
-        "Immerse yourself in focused academic discussions and shared learning experiences.",
+      title: t("studyGroups.twoPaths.path1.title"),
+      description: t("studyGroups.twoPaths.path1.description"),
     },
     {
       icon: "/assets/research.svg",
-      title: "Research Groups",
-      description:
-        "Embark on collaborative scientific journeys and contribute to cutting-edge discoveries.",
+      title: t("studyGroups.twoPaths.path2.title"),
+      description: t("studyGroups.twoPaths.path2.description"),
     },
   ];
 
@@ -60,8 +60,8 @@ const page = () => {
       <HeroSection />
 
       <TwoCards
-        title="Two Paths, One Goal: Elevate Your Learning"
-        subtitle="Choose Your Collaborative Adventure"
+        title={t("studyGroups.twoPaths.title")}
+        subtitle={t("studyGroups.twoPaths.subtitle")}
         cardsData={twoPathsData}
       />
 
@@ -78,12 +78,7 @@ const page = () => {
       <section className="bg-[#FCFCFC] px-4 md:px-8 py-[64px]">
         <div className="max-w-[952px] mx-auto flex flex-col gap-[20px] md:gap-[40px]">
           <p className="text-dark font-bold text-[20px] text-center">
-            At StudySmart, we believe that greatness is achieved together. Our
-            study groups are more than just learning platforms – they're
-            incubators for excellence, where your potential is amplified by the
-            collective brilliance of your peers. Step into a world where
-            collaboration catalyzes success and every discussion opens new
-            horizons.
+            {t("studyGroups.footer.text")}
           </p>
         </div>
       </section>
@@ -91,4 +86,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -1,53 +1,45 @@
+"use client";
+
+import { useLanguage } from "@/app/context/LanguageContext";
 import Image from "next/image";
-import { BiBook, BiMapPin } from "react-icons/bi";
-import { FaClipboardList, FaUserSecret } from "react-icons/fa6";
 import { FiMoreHorizontal } from "react-icons/fi";
-import { SiTarget } from "react-icons/si";
 
 const services = [
   {
     icon: "/assets/book.png",
-    title: "Training",
-    description:
-      "Transform your knowledge with our expert-led courses and workshops, designed to prepare you for the USMLE and more.",
+    type: "training",
   },
   {
     icon: "/assets/map.png",
-    title: "Consulting",
-    description:
-      "Get expert advice tailored to your needs, guiding you through every step of your educational and professional journey.",
+    type: "consulting",
   },
   {
     icon: "/assets/people.png",
-    title: "Study Groups",
-    description:
-      "Connect, collaborate, and conquer your goals with our dynamic peer study and research groups.",
+    type: "studyGroups",
   },
   {
     icon: "/assets/clipboard-text.png",
-    title: "Coaching Services",
-    description:
-      "Excel in exams and interviews with personalized coaching from experienced professionals.",
+    type: "coaching",
   },
   {
     icon: "/assets/star.png",
-    title: "Professional Services",
-    description:
-      "Navigate your career path with our comprehensive support in project assistance, immigration services, and more.",
+    type: "professional",
   },
 ];
 
 export default function Services() {
+  const { t } = useLanguage();
+
   return (
     <section className="bg-[#FCFCFC] px-4 md:px-8 md:py-[75px] py-[36px]">
       <div className="max-w-[1280px] mx-auto ">
         {/* Header */}
         <div className="text-center mb-[40px] md:mb-[75px] space-y-[14px] max-w-[595px] mx-auto">
           <h2 className="text-dark text-[28px] md:text-[30px] font-bold leading-[37.5px]">
-            Unlock Your Potential with StudySmart
+            {t("home.services.header.title")}
           </h2>
           <p className="text-middle text-[16px] md:text-[20px] font-[300]">
-            Tailored services to elevate your medical career
+            {t("home.services.header.subtitle")}
           </p>
         </div>
 
@@ -65,12 +57,12 @@ export default function Services() {
 
               {/* Title */}
               <h3 className="text-dark text-[24px] font-bold">
-                {service.title}
+                {t(`home.services.${service.type}.title`)}
               </h3>
 
               {/* Description */}
               <p className="text-dark text-base font-[300]">
-                {service.description}
+                {t(`home.services.${service.type}.description`)}
               </p>
             </div>
           ))}

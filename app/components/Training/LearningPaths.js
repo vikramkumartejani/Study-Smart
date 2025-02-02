@@ -1,25 +1,28 @@
-"use client";
+import { useLanguage } from "@/app/context/LanguageContext";
+
 export default function LearningPaths() {
+  const { t } = useLanguage();
+
   const paths = [
     {
       number: 1,
-      title: "Online USMLE Step 1 and Step 2 CK Courses",
+      title: t("training.learningPaths.path1"),
     },
     {
       number: 2,
-      title: "Comprehensive OET Preparation Course",
+      title: t("training.learningPaths.path2"),
     },
     {
       number: 3,
-      title: "Intensive Exam Preparation Courses",
+      title: t("training.learningPaths.path3"),
     },
     {
       number: 4,
-      title: "Research Paper Writing Courses",
+      title: t("training.learningPaths.path4"),
     },
     {
       number: 5,
-      title: "Data Analysis with SPSS Course",
+      title: t("training.learningPaths.path5"),
     },
   ];
 
@@ -27,10 +30,10 @@ export default function LearningPaths() {
     <section className="bg-[#FCFCFC] px-4 md:px-8 md:py-[100px] py-[50px]">
       <div className="max-w-[1280px] mx-auto">
         <h2 className="text-[28px] sm:text-[30px] font-bold text-center text-dark mb-[10px]">
-          Explore StudySmart's Diverse Learning Paths
+          {t("training.learningPaths.title")}
         </h2>
         <p className="text-center text-[18px] sm:text-[20px] font-[300] text-middle mb-[56px] md:mb-[80px]">
-          Navigate Your Educational Journey with Confidence
+          {t("training.learningPaths.subtitle")}
         </p>
 
         <div className="relative flex md:flex-row flex-col justify-between items-start gap-[2rem]">

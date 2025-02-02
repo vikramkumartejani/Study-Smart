@@ -1,15 +1,17 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function Roadmap() {
+  const { t } = useLanguage();
+
   const milestones = [
     {
-      title: "Trajectory Mapping:",
-      description:
-        "Unveil your optimal route from aspirations to achievements.",
+      title: t("consulting.roadmap.milestone1.title"),
+      description: t("consulting.roadmap.milestone1.description"),
     },
     {
-      title: "Milestone Illumination:",
-      description: "Spotlight key waypoints in your educational odyssey.",
+      title: t("consulting.roadmap.milestone2.title"),
+      description: t("consulting.roadmap.milestone2.description"),
     },
   ];
 
@@ -29,10 +31,10 @@ export default function Roadmap() {
           <div className="relative z-10 flex flex-col gap-[40px]">
             <div className="text-center">
               <h2 className="text-[28px] md:text-[30px] font-bold mb-4">
-                Your Personalized Roadmap to Success
+                {t("consulting.roadmap.title")}
               </h2>
               <p className="text-[20px] font-[300]">
-                Illuminating Paths, Revealing Horizons
+                {t("consulting.roadmap.subtitle")}
               </p>
             </div>
 

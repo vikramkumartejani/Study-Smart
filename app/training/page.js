@@ -1,3 +1,4 @@
+"use client";
 import CoursesSection from "../components/Training/CoursesSection";
 import HeroSection from "../components/Training/HeroSection";
 import LearningPaths from "../components/Training/LearningPaths";

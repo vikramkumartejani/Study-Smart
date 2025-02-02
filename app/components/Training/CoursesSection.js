@@ -2,6 +2,7 @@
 import { BsArrowRight } from "react-icons/bs";
 import Image from "next/image";
 import { FiCheck } from "react-icons/fi";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 // Reusable Course Component
 export function Course({
@@ -14,6 +15,7 @@ export function Course({
   buttonText,
   reverse = false,
 }) {
+  const { locale } = useLanguage();
   return (
     <div
       className={`flex flex-col gap-4 ${
@@ -52,7 +54,7 @@ export function Course({
 
         <button className="inline-flex items-center gap-2 px-[40px] py-3 rounded-full border-2 border-primary text-dark font-[500] hover:bg-primary hover:text-white transition-colors">
           {buttonText}
-          <BsArrowRight />
+          <BsArrowRight className={`${locale === "ar" ? "rotate-180" : ""}`} />
         </button>
       </div>
 
@@ -77,66 +79,64 @@ export function Course({
 
 // Courses Section with Multiple Course Entries
 export default function CoursesSection() {
+  const { t } = useLanguage();
+
   const coursesData = [
     {
-      title: "Master Your USMLE Journey",
-      subtitle: "Rigorous Preparation Tailored to Your Success",
-      description:
-        "Prepare rigorously for USMLE Step 1 and Step 2 CK exams with StudySmart's specialized online courses. Our comprehensive approach integrates advanced study materials, practice exams, and personalized feedback to ensure you excel when it matters most.",
-      listTitle: "Course Titles:",
+      title: t("training.courses.usmle.title"),
+      subtitle: t("training.courses.usmle.subtitle"),
+      description: t("training.courses.usmle.description"),
+      listTitle: t("training.courses.listTitle"),
       courseList: [
-        "Comprehensive USMLE Step 1 Review Course",
-        "Advanced USMLE Step 2 CK Preparation",
-        "USMLE Practice Exam Series",
-        "Personalized Study Plans and Feedback Sessions",
+        t("training.courses.usmle.list.item1"),
+        t("training.courses.usmle.list.item2"),
+        t("training.courses.usmle.list.item3"),
+        t("training.courses.usmle.list.item4"),
       ],
       image: "/assets/course1.jpeg",
-      buttonText: "Start Your Journey",
+      buttonText: t("training.courses.usmle.buttonText"),
     },
     {
-      title: "Excel in Language Proficiency with StudySmart",
-      subtitle: "Tailored Training for Healthcare Professionals",
-      description:
-        "Elevate your language proficiency with StudySmart's comprehensive OET preparation course. Designed specifically for healthcare professionals, our program includes realistic simulations and personalized coaching to help you achieve exceptional OET scores.",
-      listTitle: "Course Titles:",
+      title: t("training.courses.language.title"),
+      subtitle: t("training.courses.language.subtitle"),
+      description: t("training.courses.language.description"),
+      listTitle: t("training.courses.listTitle"),
       courseList: [
-        "Introduction to OET: Overview and Test Format",
-        "Language Proficiency Development for Healthcare Professionals",
-        "Effective Communication Strategies for OET",
-        "Realistic Scenario Simulations and Mock Tests",
+        t("training.courses.language.list.item1"),
+        t("training.courses.language.list.item2"),
+        t("training.courses.language.list.item3"),
+        t("training.courses.language.list.item4"),
       ],
       image: "/assets/course2.jpeg",
-      buttonText: "Get Started",
+      buttonText: t("training.courses.language.buttonText"),
     },
     {
-      title: "Achieve Exam Excellence with StudySmart",
-      subtitle: "Targeted Support for Professional Success",
-      description:
-        "Boost your exam performance with StudySmart's intensive preparation courses. Our expert-led sessions provide tailored guidance, customized study plans, and access to comprehensive resources to maximize your readiness and confidence on exam day.",
-      listTitle: "Course Titles:",
+      title: t("training.courses.exam.title"),
+      subtitle: t("training.courses.exam.subtitle"),
+      description: t("training.courses.exam.description"),
+      listTitle: t("training.courses.listTitle"),
       courseList: [
-        "Medical Licensing Exam Bootcamp",
-        "Professional Certification Exam Crash Course",
-        "Strategies for High-Stakes Exam Success",
-        "Customized Study Plans and One-on-One Coaching",
+        t("training.courses.exam.list.item1"),
+        t("training.courses.exam.list.item2"),
+        t("training.courses.exam.list.item3"),
+        t("training.courses.exam.list.item4"),
       ],
       image: "/assets/course1.jpeg",
-      buttonText: "Enhance Your Skills",
+      buttonText: t("training.courses.exam.buttonText"),
     },
     {
-      title: "Refine Your Academic Voice with StudySmart",
-      subtitle: "Master the Art of Research Paper Writing",
-      description:
-        "Hone your academic writing skills with StudySmart's specialized courses. From mastering research methodologies to crafting impactful manuscripts, our training equips you with the tools to excel in academia and beyond.",
-      listTitle: "Course Titles:",
+      title: t("training.courses.academic.title"),
+      subtitle: t("training.courses.academic.subtitle"),
+      description: t("training.courses.academic.description"),
+      listTitle: t("training.courses.listTitle"),
       courseList: [
-        "Research Methodologies and Literature Review",
-        "Structuring and Organizing Your Research Paper",
-        "Writing Concisely and Effectively in Academic Contexts",
-        "Peer Review and Manuscript Submission Strategies",
+        t("training.courses.academic.list.item1"),
+        t("training.courses.academic.list.item2"),
+        t("training.courses.academic.list.item3"),
+        t("training.courses.academic.list.item4"),
       ],
       image: "/assets/course2.jpeg",
-      buttonText: "Refine Your Writing - Contact Us",
+      buttonText: t("training.courses.academic.buttonText"),
     },
   ];
 
@@ -147,9 +147,7 @@ export default function CoursesSection() {
           <Course key={index} {...course} reverse={index % 2 !== 0} />
         ))}
         <p className="text-secondary text-center font-montagu font-[600] text-[25px] sm:text-[32px] mt-[30px] md:mt-[80px] md:leading-[41.02px]">
-          Embark on a journey of knowledge and skill refinement with StudySmart,
-          where every course is designed to empower you towards a brighter
-          future.
+          {t("training.courses.footer")}
         </p>
       </div>
     </section>

@@ -1,36 +1,46 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useState, useEffect } from 'react';
-import { translations } from '../translations';
+import { createContext, useContext, useState, useEffect } from "react";
+import { translations } from "../translations";
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [locale, setLocale] = useState('en');
+  const [locale, setLocale] = useState("en");
 
-  // Update document direction when language changes
   useEffect(() => {
-    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = locale;
   }, [locale]);
 
   const toggleLanguage = () => {
-    setLocale(prev => prev === 'en' ? 'ar' : 'en');
+    setLocale((prev) => (prev === "en" ? "ar" : "en"));
   };
 
   const t = (key) => {
     try {
-      const keys = key.split('.');
+      const keys = key.split(".");
       let value = translations[locale];
-      
+
       for (const k of keys) {
+        if (!value || typeof value !== "object") {
+          console.error(`Translation key "${key}" is incorrect or missing`);
+          return key;
+        }
         value = value[k];
-        if (value === undefined) return key;
       }
-      
+
+      // Check if the final value is an object (not an array)
+      if (typeof value === "object" && !Array.isArray(value)) {
+        console.error(
+          `Translation key "${key}" resolves to an object instead of a string or array`
+        );
+        return key;
+      }
+
       return value;
     } catch (error) {
-      console.error(`Translation missing for key: ${key}`);
+      console.error(`Error retrieving translation for key: ${key}`, error);
       return key;
     }
   };
@@ -45,7 +55,7 @@ export function LanguageProvider({ children }) {
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error('useLanguage must be used within LanguageProvider');
+    throw new Error("useLanguage must be used within LanguageProvider");
   }
   return context;
-}; 
+};
