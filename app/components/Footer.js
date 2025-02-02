@@ -23,11 +23,19 @@ export default function Footer() {
       { name: t("navbar.contact"), href: "/contact" },
     ],
     column2: [
+<<<<<<< HEAD
       { name: t("navbar.training"), href: "/training" },
       { name: t("navbar.consulting"), href: "/consulting" },
       { name: t("navbar.studyGroups"), href: "/study-groups" },
       { name: t("navbar.coaching"), href: "/coaching" },
       { name: t("navbar.professionalServices"), href: "/services" },
+=======
+      { name: t('training'), href: "/training" },
+      { name: t('consulting'), href: "/consulting" },
+      { name: t('studyGroups'), href: "/study-groups" },
+      { name: t('coaching'), href: "/coaching" },
+      { name: t('professionalServices'), href: "/professional-services" },
+>>>>>>> ee16e5b8467e833f0c03caba3fc55cf1e9ef1e7e
     ],
   };
 

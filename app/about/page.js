@@ -8,7 +8,7 @@ export default function About() {
     return (
         <div className="w-full">
             {/* Who We Are Section */}
-            <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-48 pb-16 xl:py-16">
                 <div className="flex items-center justify-center md:flex-row flex-col gap-6 md:gap-10">
                     <Image
                         src="/assets/about-us-hero.png"
