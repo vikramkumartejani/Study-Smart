@@ -107,13 +107,13 @@ export default function ProfessionalServices() {
                         <h2 className="text-[30px] leading-[37.5px] font-bold text-dark mb-4">
                             {t('professionalServicesPage.navigation.title')}
                         </h2>
-                        <p className="text-[#4D637B] text-xl">
+                        <p className="text-[#4D637B] text-xl leading-[25px] font-light">
                             {t('professionalServicesPage.navigation.subtitle')}
                         </p>
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         {services.map((service, index) => (
-                            <div key={index} className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <div key={index} className="text-center p-6 bg-white">
                                 <div className="mb-4">
                                     <Image
                                         src={service.icon}
@@ -123,8 +123,8 @@ export default function ProfessionalServices() {
                                         className="mx-auto"
                                     />
                                 </div>
-                                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                                <p className="text-[#4D637B]">{service.description}</p>
+                                <h3 className="text-[24px] leading-[30px] font-bold mb-4">{service.title}</h3>
+                                <p className="text-dark text-[16px] leading-[20px] font-light">{service.description}</p>
                             </div>
                         ))}
                     </div>
@@ -134,9 +134,9 @@ export default function ProfessionalServices() {
             {/* Detailed Sections */}
             <section className="py-16">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-10 gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-10 gap-8">
                         {/* Left Column - Number 5 */}
-                        <div className="col-span-4 h-[calc(170vh)]">
+                        <div className="lg:col-span-4 lg:h-[calc(170vh)]">
                             <div className="sticky top-24">
                                 <div className='flex items-end gap-6'>
                                     <h1 
@@ -153,7 +153,7 @@ export default function ProfessionalServices() {
                                     <Image src='/assets/5.svg' alt='5' width={150} height={248} />
                                 </div>
                                 <h1 
-                                    className="mt-6 text-[56px] leading-[71px] font-bold uppercase"
+                                    className="mt-6 text-[35px] sm:text-[40px] xl:text-[56px] leading-[42px] sm:leading-[50px] xl:leading-[71px] font-bold uppercase"
                                     style={{
                                         background: "linear-gradient(102.62deg, #FF9063 0%, #CC4712 58.73%)",
                                         WebkitBackgroundClip: "text",
@@ -168,10 +168,10 @@ export default function ProfessionalServices() {
                         </div>
 
                         {/* Right Column - Services List */}
-                        <div className="col-span-6 relative min-h-[calc(100vh-96px)]">
+                        <div className="lg:col-span-6 relative min-h-[calc(100vh-96px)]">
                             {/* Main vertical line */}
                             <div 
-                                className="absolute left-1.5 top-[10px] w-[1px] h-[calc(100%-14px)] bg-[#00000020]"
+                                className=" lg:block hidden absolute left-1.5 top-[10px] w-[1px] h-[calc(100%-14px)] bg-[#00000020]"
                             ></div>
 
                             {/* Services List */}   
@@ -180,7 +180,7 @@ export default function ProfessionalServices() {
                                     <div key={service.id} className="flex flex-col">
                                         <div className="flex items-start gap-6 relative">
                                             {/* Blue dot */}
-                                            <div className="relative">
+                                            <div className="relative lg:block hidden">
                                                 <div className="w-3 h-3 rounded-full bg-[#1848AD] mt-3 top-24 relative z-20"></div>
                                             </div>
                                             <div className="flex-1">
@@ -211,7 +211,7 @@ export default function ProfessionalServices() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-16">
+            <section className="pb-16 pt-10 md:py-16">
                 <div className="max-w-[990px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <p className="text-dark text-[20px] leading-[25px] font-medium mb-10">
                         {t('professionalServicesPage.cta.text')}
@@ -220,7 +220,7 @@ export default function ProfessionalServices() {
                         style={{
                             background: "linear-gradient(90deg, #1848AD 0%, #11337A 100%)",
                         }}
-                        className="w-full sm:w-fit px-5 sm:px-10 py-4 rounded-[31px] text-white text-[18px] leading-[22.5px] font-medium hover:opacity-90 transition-all duration-300"
+                        className="w-full sm:w-fit px-5 sm:px-10 py-4 rounded-[31px] text-white text-base sm:text-[18px] leading-[22.5px] font-medium hover:opacity-90 transition-all duration-300"
                     >
                         {t('professionalServicesPage.cta.button')}
                     </button>
