@@ -4,13 +4,18 @@ import { useLanguage } from "@/app/context/LanguageContext";
 import Image from "next/image";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const isRTL = locale === "ar";
 
   return (
     <section className="min-h-screen bg-primary flex items-center justify-center px-4 md:px-8 md:py-[75px] py-[36px] mt-[-7px]">
       <div className="max-w-[1280px] w-full flex flex-col md:flex-row items-center gap-[40px] md:gap-12 lg:gap-16">
         {/* Left side - Circular Image */}
-        <div className="w-full xl:w-1/2 md:w-[40%] w-[278px]">
+        <div
+          className={`w-full xl:w-1/2 md:w-[40%] w-[278px] flex justify-center ${
+            isRTL ? "md:order-2 md:justify-end" : "md:order-1 md:justify-start"
+          }`}
+        >
           <div className="xl:h-[673.38px] lg:h-[540px] bg-[#CBF2FE] md:h-[490px] h-[400px] xl:w-[468px] lg:w-[340px] md:w-[300px] w-[278px] rounded-full overflow-hidden bg-[#e5f0ff] relative">
             <Image
               width={468}
@@ -23,7 +28,11 @@ export default function Hero() {
         </div>
 
         {/* Right side - Content */}
-        <div className="w-full md:w-[75%] text-white md:space-y-[32px] space-y-[16px] relative md:text-left text-center">
+        <div
+          className={`w-full md:w-[75%] text-white md:space-y-[32px] space-y-[16px] relative ${
+            isRTL ? "order-1 md:text-right" : "order-2 md:text-left"
+          } text-center`}
+        >
           <h1 className="text-[28px] md:text-[39px] lg:text-[56px] font-[600] leading-[1.3]">
             {t("home.hero.title1")}
             <br />
@@ -49,7 +58,9 @@ export default function Hero() {
             height={120}
             src="/assets/arrow.png"
             alt="arrow"
-            className="absolute bottom-[-70px] left-[-75px] md:block hidden"
+            className={`absolute bottom-[-70px] ${
+              isRTL ? "right-[105px]" : "left-[-75px]"
+            } md:block hidden`}
           />
         </div>
       </div>

@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="xl:h-[100px] md:h-[151px]" />
+      <div className="xl:h-[100px] md:h-[151px] h-[88px]" />
       <nav
         className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
           isScrolled ? "border-b shadow-lg" : "border-b"
