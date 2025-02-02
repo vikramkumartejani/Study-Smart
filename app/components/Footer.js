@@ -33,7 +33,7 @@ export default function Footer() {
       { name: t('consulting'), href: "/consulting" },
       { name: t('studyGroups'), href: "/study-groups" },
       { name: t('coaching'), href: "/coaching" },
-      { name: t('professionalServices'), href: "/services" },
+      { name: t('professionalServices'), href: "/professional-services" },
     ],
   };
 
