@@ -77,7 +77,7 @@ export default function ProfessionalServices() {
         <div className={`w-full ${locale === 'ar' ? 'rtl' : 'ltr'}`}>
             {/* Hero Section */}
             <section className="relative bg-[#A2BDE1] overflow-hidden -mt-10 rounded-b-[80px]">
-                <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-40 md:pt-[250px] lg:pt-48 xl:pt-20">
+                <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-[100px] xl:pt-20">
                     <div className="flex flex-col lg:flex-row items-center gap-8">
                         <div className="lg:w-1/2 sm:text-left text-center">
                             <h1 className="text-[25px] sm:text-[35px] xl:text-[48px] leading-[35px] sm:leading-[45px] xl:leading-[61px] font-semibold text-white mb-4">
@@ -87,11 +87,11 @@ export default function ProfessionalServices() {
                                 {t('professionalServicesPage.hero.description')}
                             </p>
                         </div>
-                        <div className="lg:w-1/2">
+                        <div className="lg:w-1/2 flex items-end justify-end lg:mr-10">
                             <Image
-                                src="/assets/professional.png"
+                                src="/assets/hero-professional.png"
                                 alt="Professional Services"
-                                width={600}
+                                width={450}
                                 height={400}
                                 className="rounded-lg"
                             />

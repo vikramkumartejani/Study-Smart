@@ -22,14 +22,14 @@ const ContactInformation = () => {
                         </div>
                         <div className="text-center">
                             <div className=" mb-2 sm:mb-4">
-                                <Image src="/assets/email.svg" alt="Email" width={64} height={64} className="mx-auto" />
+                                <Image src="/assets/phone-icon.svg" alt="Email" width={64} height={64} className="mx-auto" />
                             </div>
                             <h3 className="font-light text-base leading-[20px]  mb-2 sm:mb-4 text-dark">{t('contactPage.contactInfo.phone')}</h3>
                             <p className='text-dark text-[16px] leading-[20px] font-medium'>+1 (555) 123-4567</p>
                         </div>
                         <div className="text-center">
                             <div className=" mb-2 sm:mb-4">
-                                <Image src="/assets/email.svg" alt="Email" width={64} height={64} className="mx-auto" />
+                                <Image src="/assets/business-hours.svg" alt="Email" width={64} height={64} className="mx-auto" />
                             </div>
                             <h3 className="font-light text-base leading-[20px]  mb-2 sm:mb-4 text-dark">{t('contactPage.contactInfo.businessHours')}:</h3>
                             <p className='text-dark text-[16px] leading-[20px] font-medium'>{t('contactPage.contactInfo.businessHoursText')}</p>
