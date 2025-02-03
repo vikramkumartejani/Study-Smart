@@ -69,7 +69,7 @@ export default function RecentArticles() {
                 {/* Articles Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {articles.map((article, index) => (
-                        <Link href="/single-blog-page" key={index}>
+                        <Link href="/single-mag-page" key={index}>
                             <div className="group cursor-pointer">
                                 <div className="relative w-full h-[200px] mb-4">
                                     <Image
