@@ -1,6 +1,5 @@
 'use client';
 import { useLanguage } from '../context/LanguageContext';
-import Image from 'next/image';
 import { FaInstagram, FaLinkedinIn, FaXTwitter, FaFacebookF } from 'react-icons/fa6';
 import Hero from '../components/ContactUs/Hero';
 import ContactInformation from '../components/ContactUs/ContactInformation';
