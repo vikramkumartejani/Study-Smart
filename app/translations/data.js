@@ -7,25 +7,25 @@ export const coreCommitmentsData = [
     },
     {
         type: 'learning',
-        icon: '/assets/our-core-commitments-one.svg',
+        icon: '/assets/book-icon.svg',
         descriptionEn: 'Fostering a culture of continuous learning and professional development',
         descriptionAr: 'تشجيع الثقافة المستمرة للتطوير المهني والتطوير'
     },
     {
         type: 'practice',
-        icon: '/assets/our-core-commitments-one.svg',
+        icon: '/assets/share-circle-icon.svg',
         descriptionEn: 'Creating synergies between academic excellence and real-world medical practice',
         descriptionAr: 'إنشاء سيرجينيات بين الإكاديمية الممتازة والممارسة الطبية الحقيقية'
     },
     {
         type: 'career',
-        icon: '/assets/our-core-commitments-one.svg',
+        icon: '/assets/stethoscope.svg',
         descriptionEn: 'Empowering healthcare professionals to navigate their careers with confidence and competence',
         descriptionAr: 'تمكين المهنيين الطبيين للتنقل في طريقتهم المهنية بثقة وكفاءة'
     },
     {
         type: 'innovation',
-        icon: '/assets/our-core-commitments-one.svg',
+        icon: '/assets/benzene-ring.svg',
         descriptionEn: 'Pioneering new frontiers in medical education to meet the challenges of tomorrow\'s healthcare landscape',
         descriptionAr: 'إبتكار المهبل الجديد في تعليم الطب لمواجهة مهام الطب الصحي الغدير'
     }
@@ -42,7 +42,7 @@ export const distinctionsData = [
     },
     {
         type: 'development',
-        image: '/assets/precision-learning.jpg',
+        image: '/assets/comprehensive-development.jpg',
         titleEn: 'Comprehensive Development',
         titleAr: 'التطوير الشامل',
         descriptionEn: 'Holistic programs fostering both academic and professional growth',
@@ -50,7 +50,7 @@ export const distinctionsData = [
     },
     {
         type: 'collaboration',
-        image: '/assets/precision-learning.jpg',
+        image: '/assets/innovative-collaboration.jpg',
         titleEn: 'Innovative Collaboration',
         titleAr: 'التعاون الابتكاري',
         descriptionEn: 'Dynamic learning environments through cutting-edge platforms',
@@ -58,7 +58,7 @@ export const distinctionsData = [
     },
     {
         type: 'global',
-        image: '/assets/precision-learning.jpg',
+        image: '/assets/global-perspective.jpg',
         titleEn: 'Global Perspective',
         titleAr: 'الرؤية العالمية',
         descriptionEn: 'International medical education standards into our curriculum',

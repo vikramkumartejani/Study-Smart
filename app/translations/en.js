@@ -716,6 +716,14 @@ const en = {
             title: "Plan your training with personal trainer online and easy",
             date: "02 MAY 2024",
           },
+          {
+            title: "Reach the utmost mindfulness and body wellness",
+            date: "02 MAY 2024",
+          },
+          {
+            title: "Plan your training with personal trainer online and easy",
+            date: "02 MAY 2024",
+          },
         ],
       },
       quickLinks: {
@@ -784,6 +792,132 @@ const en = {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
     },
+  },
+  recentArticlesPage: {
+    title: 'Recent Articles',
+    sort: {
+      label: 'Sort:',
+      options: [
+        'Newest',
+        'Popular',
+        'Most Viewed'
+      ]
+    },
+    articles: [
+      {
+        title: 'It takes what it takes to end something',
+        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'Control about the blind texts it almost unorthographics',
+        description: 'There are many variations of passages of available not the majority have suffered alteration',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'There are many variations of passages of available',
+        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'Feel the charm of existence in this spot',
+        description: 'There are many variations of passages of available not the majority have suffered alteration',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'Continual delighted as elsewhere am convinced unfeeling',
+        description: 'To loud lady whom my mile sold four. Need miss all four case fine age tell',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'View busy dine oh in knew if even',
+        description: 'Far own oh her equal old fanny. Difficulty invitation put introduced see middletons nor preference',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'Although moreover mistaken kindness me feelings',
+        description: 'Son over own why with tell her cold upon. Cordial village and settled she ability law herself',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'Knowledge nay estimable questions repulsive daughters boy',
+        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'Solicitude gay way unaffected expression for',
+        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'His mistress ladyship required off horrible disposed rejoiced',
+        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
+        date: '02 MAY 2024'
+      },
+      {
+        title: 'Unpleasing pianoforte unreserved as oh he unpleasant',
+        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
+        date: '02 MAY 2024'
+      }
+    ]
+  },
+  singleBlogPage: {
+    date: '02 MAY 2024',
+    title: 'Control about the blind texts it almost unorthographics',
+    content: {
+      intro: 'Continual delighted as elsewhere am convinced unfeeling. Introduced stimulated attachment no by projection. To loud lady whom my mile sold four. Need miss all four case fine age tell. He families my pleasant speaking it bringing it thoughts. View busy dine oh in knew if even. Boy these along far own other equal old fanny charm. Difficulty invitation put introduced see middletons nor preference.',
+      middle: 'Although moreover mistaken kindness me feelings do be marianne. Son over own nay with tell they cold upon are. Cordial village and settled she ability law herself. Finished why bringing but sir bachelor unpacked any thoughts. Unpleasing unsatiable particular inquietude did nor sir. Get his declared appetite distance his together now families. Friends am himself at on norland it viewing. Suspected elsewhere you belonging continued commanded she.',
+      third: 'Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable cultivated admiration far.',
+      subTitle: 'Their could can widen ten she any',
+      fourth: 'As so we smart those money in. Am wrote up whole so tears sense oh. Absolute required of reserved in offering no. How sense found our those gay again taken the. Had mrs outweigh desirous sex overcame. Improved property reserved disposal do offering me.',
+      conclusion: 'Although moreover mistaken kindness me feelings do be marianne. Son over own nay with tell they cold upon are. Cordial village and settled she ability law herself. Finished why bringing but sir bachelor unpacked any thoughts. Unpleasing unsatiable particular inquietude did nor sir. Get his declared appetite distance his together now families. Friends am himself at on norland it viewing. Suspected elsewhere you belonging continued commanded she.'
+    },
+    quote: 'Received overcame oh sensible so at an. Formed do change merely to county it. Am separate contempt domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too. Replied exposed savings he no viewing as up. Soon body add him hill. No father living really people estate if. Mistake do produce beloved demesne if am pursuit.',
+    searchPlaceholder: 'Search...',
+    popularPostsTitle: 'Popular Posts',
+    tagsTitle: 'Tags',
+    relatedPostsTitle: 'Related Posts',
+    shareText: 'Shares:',
+    popularPosts: [
+      {
+        title: 'Start your first week of a new job like a boss',
+        date: '02 MAY 2024',
+        image: '/assets/popular-posts1.jpg'
+      },
+      {
+        title: 'Pioneering a new twist on a co-working modeles',
+        date: '02 MAY 2024',
+        image: '/assets/popular-posts2.jpg'
+      },
+      {
+        title: 'The white-label software model in fintech',
+        date: '02 MAY 2024',
+        image: '/assets/popular-posts3.jpg'
+      }
+    ],
+    tags: ['science', 'control', 'unorthographics', 'blind', 'knowledge', 'StudySmart'],
+    relatedPosts: [
+      {
+        title: 'Control about the blind texts it almost unorthographics',
+        date: '02 MAY 2024',
+        image: '/assets/quicklinks/link1.jpg',
+      },
+      {
+        title: 'There are many variations of passages of available not the majority have suffered',
+        date: '02 MAY 2024',
+        image: '/assets/quicklinks/link2.jpg',
+      },
+      {
+        title: 'Feel the charm of existence in this spot, which was created for the bliss of souls like mine',
+        date: '02 MAY 2024',
+        image: '/assets/quicklinks/link3.jpg',
+      }
+    ],
   },
 };
 
