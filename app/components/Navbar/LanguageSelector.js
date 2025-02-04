@@ -63,7 +63,7 @@ export default function LanguageSelector() {
               locale === "en" ? "text-gray-600" : "text-blue-600"
             }`}
           >
-            عربي
+            فارسی
           </button>
         </div>
       )}
