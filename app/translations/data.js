@@ -1,67 +1,81 @@
 export const coreCommitmentsData = [
-    {
-        type: 'tech',
-        icon: '/assets/our-core-commitments-one.svg',
-        descriptionEn: 'Revolutionizing USMLE preparation through cutting-edge educational technologies',
-        descriptionAr: 'تحويل تحضير USMLE عبر تكنولوجيا التعليم التقنية'
-    },
-    {
-        type: 'learning',
-        icon: '/assets/book-icon.svg',
-        descriptionEn: 'Fostering a culture of continuous learning and professional development',
-        descriptionAr: 'تشجيع الثقافة المستمرة للتطوير المهني والتطوير'
-    },
-    {
-        type: 'practice',
-        icon: '/assets/share-circle-icon.svg',
-        descriptionEn: 'Creating synergies between academic excellence and real-world medical practice',
-        descriptionAr: 'إنشاء سيرجينيات بين الإكاديمية الممتازة والممارسة الطبية الحقيقية'
-    },
-    {
-        type: 'career',
-        icon: '/assets/stethoscope.svg',
-        descriptionEn: 'Empowering healthcare professionals to navigate their careers with confidence and competence',
-        descriptionAr: 'تمكين المهنيين الطبيين للتنقل في طريقتهم المهنية بثقة وكفاءة'
-    },
-    {
-        type: 'innovation',
-        icon: '/assets/benzene-ring.svg',
-        descriptionEn: 'Pioneering new frontiers in medical education to meet the challenges of tomorrow\'s healthcare landscape',
-        descriptionAr: 'إبتكار المهبل الجديد في تعليم الطب لمواجهة مهام الطب الصحي الغدير'
-    }
+  {
+    type: "tech",
+    icon: "/assets/our-core-commitments-one.svg",
+    descriptionEn:
+      "Revolutionizing USMLE preparation through cutting-edge educational technologies",
+    descriptionFa:
+      "انقلاب در آماده‌سازی USMLE از طریق فناوری‌های پیشرفته آموزشی",
+  },
+  {
+    type: "learning",
+    icon: "/assets/book-icon.svg",
+    descriptionEn:
+      "Fostering a culture of continuous learning and professional development",
+    descriptionFa: "ترویج فرهنگ یادگیری مستمر و توسعه حرفه‌ای",
+  },
+  {
+    type: "practice",
+    icon: "/assets/share-circle-icon.svg",
+    descriptionEn:
+      "Creating synergies between academic excellence and real-world medical practice",
+    descriptionFa:
+      "ایجاد هم‌افزایی بین تعالی دانشگاهی و عملکرد پزشکی در دنیای واقعی",
+  },
+  {
+    type: "career",
+    icon: "/assets/stethoscope.svg",
+    descriptionEn:
+      "Empowering healthcare professionals to navigate their careers with confidence and competence",
+    descriptionFa:
+      "توانمندسازی متخصصان مراقبت‌های بهداشتی برای هدایت مسیر شغلی خود با اعتماد به نفس و شایستگی",
+  },
+  {
+    type: "innovation",
+    icon: "/assets/benzene-ring.svg",
+    descriptionEn:
+      "Pioneering new frontiers in medical education to meet the challenges of tomorrow's healthcare landscape",
+    descriptionFa:
+      "پیشگامی در مرزهای جدید آموزش پزشکی برای رویارویی با چالش‌های آینده مراقبت‌های بهداشتی",
+  },
 ];
 
 export const distinctionsData = [
-    {
-        type: 'precision',
-        image: '/assets/precision-learning.jpg',
-        titleEn: 'Precision Learning',
-        titleAr: 'تعلم الدقة',
-        descriptionEn: 'Tailored educational approaches that adapt to your learning style',
-        descriptionAr: 'أساليب تعليمية تخصصة يمكن أن تتناسب مع نمط تعلمك'
-    },
-    {
-        type: 'development',
-        image: '/assets/comprehensive-development.jpg',
-        titleEn: 'Comprehensive Development',
-        titleAr: 'التطوير الشامل',
-        descriptionEn: 'Holistic programs fostering both academic and professional growth',
-        descriptionAr: 'برامج تطوير شاملة تشجع النمو الأكاديمي والمهني'
-    },
-    {
-        type: 'collaboration',
-        image: '/assets/innovative-collaboration.jpg',
-        titleEn: 'Innovative Collaboration',
-        titleAr: 'التعاون الابتكاري',
-        descriptionEn: 'Dynamic learning environments through cutting-edge platforms',
-        descriptionAr: 'أوصاف تعليمية حية عبر الأنظمة التقنية المبتكرة'
-    },
-    {
-        type: 'global',
-        image: '/assets/global-perspective.jpg',
-        titleEn: 'Global Perspective',
-        titleAr: 'الرؤية العالمية',
-        descriptionEn: 'International medical education standards into our curriculum',
-        descriptionAr: 'معايير التعليم الطبي الدولية في منهجنا'
-    }
-]; 
+  {
+    type: "precision",
+    image: "/assets/precision-learning.jpg",
+    titleEn: "Precision Learning",
+    titleFa: "یادگیری دقیق",
+    descriptionEn:
+      "Tailored educational approaches that adapt to your learning style",
+    descriptionFa:
+      "رویکردهای آموزشی سفارشی که با سبک یادگیری شما سازگار می‌شوند",
+  },
+  {
+    type: "development",
+    image: "/assets/comprehensive-development.jpg",
+    titleEn: "Comprehensive Development",
+    titleFa: "توسعه جامع",
+    descriptionEn:
+      "Holistic programs fostering both academic and professional growth",
+    descriptionFa: "برنامه‌های جامع برای پرورش رشد تحصیلی و حرفه‌ای",
+  },
+  {
+    type: "collaboration",
+    image: "/assets/innovative-collaboration.jpg",
+    titleEn: "Innovative Collaboration",
+    titleFa: "همکاری نوآورانه",
+    descriptionEn:
+      "Dynamic learning environments through cutting-edge platforms",
+    descriptionFa: "محیط‌های یادگیری پویا از طریق پلتفرم‌های پیشرفته",
+  },
+  {
+    type: "global",
+    image: "/assets/global-perspective.jpg",
+    titleEn: "Global Perspective",
+    titleFa: "دیدگاه جهانی",
+    descriptionEn:
+      "International medical education standards into our curriculum",
+    descriptionFa: "استانداردهای آموزش پزشکی بین‌المللی در برنامه درسی ما",
+  },
+];

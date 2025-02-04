@@ -6,12 +6,12 @@ import { useLanguage } from "@/app/context/LanguageContext";
 const Hero = () => {
   const { t, locale } = useLanguage();
   return (
-    <div className={`w-full ${locale === "ar" ? "rtl" : "ltr"}`}>
+    <div className={`w-full ${locale === "fa" ? "rtl" : "ltr"}`}>
       <section className="max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-16 pb-16">
         <div className="flex justify-center flex-col-reverse lg:flex-row items-center gap-10">
           <div
             className={`w-full lg:max-w-[589px]  ${
-              locale === "ar"
+              locale === "fa"
                 ? "ltr text-center sm:text-right"
                 : "rtl text-center sm:text-left"
             }`}
