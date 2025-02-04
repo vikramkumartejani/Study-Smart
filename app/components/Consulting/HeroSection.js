@@ -27,7 +27,7 @@ export default function HeroSection() {
           <div className="md:absolute md:top-1/2 md:mt-0 mt-[-150px] md:left-0 md:transform md:-translate-y-1/2 w-full md:w-[60%] md:mr-[-3rem] mt-6 md:mt-0 max-w-[733px] md:px-0 px-4">
             <div
               className={`bg-secondary p-[24px] rounded-[16px] w-full ${
-                locale === "ar" ? "md:text-right" : "md:text-left"
+                locale === "fa" ? "md:text-right" : "md:text-left"
               } text-center`}
             >
               <h4 className="md:text-[24px] text-white font-[600] font-montagu mb-2">

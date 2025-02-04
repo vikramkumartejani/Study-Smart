@@ -9,12 +9,12 @@ export function LanguageProvider({ children }) {
   const [locale, setLocale] = useState("en");
 
   useEffect(() => {
-    document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = locale === "fa" ? "rtl" : "ltr";
     document.documentElement.lang = locale;
   }, [locale]);
 
   const toggleLanguage = () => {
-    setLocale((prev) => (prev === "en" ? "ar" : "en"));
+    setLocale((prev) => (prev === "en" ? "fa" : "en"));
   };
 
   const t = (key) => {

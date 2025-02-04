@@ -33,14 +33,14 @@ export default function DiscoverSection() {
           <div className="relative rounded-[16px] overflow-hidden md:order-2 order-1">
             <img
               src="/assets/discover-video-img.png"
-              alt={t("home.discover.imageAlt")}
+              alt="Introduction Video"
               className="w-full h-auto rounded-[16px]"
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-secondary rounded-full flex items-center justify-center ps-[4px] cursor-pointer hover:bg-[#f4511e] transition-colors duration-200 w-[80px] h-[80px]">
                 <Image
                   src="/assets/play-icon.svg"
-                  alt={t("home.discover.playIconAlt")}
+                  alt="play-icon"
                   width={54.67}
                   height={54.67}
                 />

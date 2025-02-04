@@ -133,7 +133,7 @@ export default function ServicesSlider() {
               {t(`home.servicesSlider.${tabs[activeTab].id}.button`)}
               <BsArrowRight
                 className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${
-                  locale === "ar" ? "rotate-180" : ""
+                  locale === "fa" ? "rotate-180" : ""
                 }`}
               />
             </button>

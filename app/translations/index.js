@@ -1,9 +1,9 @@
-import en from './en';
-import ar from './ar';
+import en from "./en";
+import fa from "./fa";
 
 export const translations = {
-    en,
-    ar
+  en,
+  fa,
 };
 
-export * from './data'; 
+export * from "./data";

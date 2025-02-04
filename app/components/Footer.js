@@ -54,14 +54,14 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-white px-4 sm:px-6 lg:px-8 py-[40px]">
       <div
-        className={`max-w-[1280px] mx-auto ${locale === "ar" ? "rtl" : "ltr"}`}
+        className={`max-w-[1280px] mx-auto ${locale === "fa" ? "rtl" : "ltr"}`}
       >
         <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr] md:gap-8 gap-[80px] md:text-left text-center">
           {/* Contact Information */}
           <div className="space-y-[32px]">
             <h2
               className={`md:text-[18px] font-bold ${
-                locale === "ar" ? "rtl text-right" : "ltr text-left"
+                locale === "fa" ? "rtl text-right" : "ltr text-left"
               }`}
             >
               {footerData.contactInfo}
@@ -69,7 +69,7 @@ export default function Footer() {
             <div className="flex flex-col gap-[38px] md:items-start items-center">
               <div
                 className={`flex items-center ${
-                  locale === "ar" ? "space-x-reverse" : ""
+                  locale === "fa" ? "space-x-reverse" : ""
                 } space-x-[8px]`}
               >
                 <Image
@@ -93,7 +93,7 @@ export default function Footer() {
               </div>
               <div
                 className={`flex items-center ${
-                  locale === "ar" ? "space-x-reverse" : ""
+                  locale === "fa" ? "space-x-reverse" : ""
                 } space-x-[8px]`}
               >
                 <Image
@@ -117,7 +117,7 @@ export default function Footer() {
               </div>
               <div
                 className={`flex items-center ${
-                  locale === "ar" ? "space-x-reverse" : ""
+                  locale === "fa" ? "space-x-reverse" : ""
                 } space-x-[8px]`}
               >
                 <Image
@@ -142,7 +142,7 @@ export default function Footer() {
           {/* Navigation Links */}
           <div
             className={`grid grid-cols-2 gap-8 ${
-              locale === "ar" ? "rtl" : "ltr"
+              locale === "fa" ? "rtl" : "ltr"
             }`}
           >
             <div className="space-y-6">
@@ -174,7 +174,7 @@ export default function Footer() {
         <div className="mt-[75px]">
           <div
             className={`flex flex-col md:flex-row items-center justify-between gap-[24px] ${
-              locale === "ar" ? "rtl" : "ltr"
+              locale === "fa" ? "rtl" : "ltr"
             }`}
           >
             <div className="flex md:flex-row flex-col items-center gap-[32px]">

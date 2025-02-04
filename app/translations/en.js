@@ -11,7 +11,7 @@ const en = {
     studyGroups: "Study Groups",
     coaching: "Coaching",
     professionalServices: "Professional Services",
-    language: "العربية",
+    language: "فارسی",
   },
   home: {
     hero: {
@@ -24,70 +24,33 @@ const en = {
     },
     services: {
       header: {
-        title: "Our Services",
-        subtitle: "Comprehensive support tailored to your success journey",
+        title: "Unlock Your Potential with StudySmart",
+        subtitle: "Tailored services to elevate your medical career",
       },
       training: {
-        title: "Training Programs",
+        title: "Training",
         description:
-          "Comprehensive training programs designed to help you excel in medical licensing exams and professional development.",
+          "Transform your knowledge with our expert-led courses and workshops, designed to prepare you for the USMLE and more.",
       },
       consulting: {
-        title: "Expert Consulting",
+        title: "Consulting",
         description:
-          "Personalized guidance and strategic advice to help you navigate your medical career path effectively.",
+          "Get expert advice tailored to your needs, guiding you through every step of your educational and professional journey.",
       },
       studyGroups: {
         title: "Study Groups",
         description:
-          "Collaborative learning environments where you can connect with peers and enhance your understanding through group discussions.",
+          "Connect, collaborate, and conquer your goals with our dynamic peer study and research groups.",
       },
       coaching: {
-        title: "Personal Coaching",
+        title: "Coaching Services",
         description:
-          "One-on-one mentoring sessions with experienced professionals to help you achieve your specific goals.",
+          "Excel in exams and interviews with personalized coaching from experienced professionals.",
       },
       professional: {
-        title: "Professional Development",
+        title: "Professional Services",
         description:
-          "Advanced courses and workshops to help you develop crucial skills for your medical career.",
-      },
-    },
-    servicesSlider: {
-      training: {
-        label: "Training Programs",
-        title: "Comprehensive Medical Training",
-        sliderDescription:
-          "Our training programs are designed to provide you with the knowledge and skills needed to excel in medical licensing exams and professional development. Learn from expert instructors through structured curricula and hands-on practice.",
-        button: "Explore Training Programs",
-      },
-      consulting: {
-        label: "Expert Consulting",
-        title: "Strategic Career Guidance",
-        sliderDescription:
-          "Get personalized consulting from experienced medical professionals who understand your goals. We'll help you navigate career decisions, residency applications, and professional development opportunities.",
-        button: "Book a Consultation",
-      },
-      studyGroups: {
-        label: "Study Groups",
-        title: "Collaborative Learning",
-        sliderDescription:
-          "Join our focused study groups to learn alongside peers who share your goals. Benefit from structured discussions, shared resources, and mutual support in your medical education journey.",
-        button: "Join a Study Group",
-      },
-      coaching: {
-        label: "Personal Coaching",
-        title: "One-on-One Mentoring",
-        sliderDescription:
-          "Receive dedicated attention from experienced medical professionals who will guide your learning journey. Our coaches provide personalized strategies and feedback to help you achieve your goals.",
-        button: "Start Coaching",
-      },
-      professional: {
-        label: "Professional Development",
-        title: "Career Advancement",
-        sliderDescription:
-          "Take your medical career to the next level with our professional development programs. Gain advanced skills, certifications, and knowledge needed for career progression.",
-        button: "Advance Your Career",
+          "Navigate your career path with our comprehensive support in project assistance, immigration services, and more.",
       },
     },
     discover: {
@@ -95,6 +58,75 @@ const en = {
       description:
         "At StudySmart, we are committed to guiding aspiring medical professionals to success. Our expert-led courses, supportive study groups, and personalized coaching services lay the foundation for your achievements. From exam preparation to professional services, we're here to support you at every step.",
       button: "Learn More About Us",
+    },
+    servicesSlider: {
+      training: {
+        label: "Training",
+        title: "Master Your Studies with Comprehensive Courses",
+        sliderDescription:
+          "Prepare for the USMLE Step 1 and Step 2 CK, OET, and more with our extensive range of courses. Our expert instructors and flexible online format allow you to learn at your own pace and achieve your academic goals.",
+        button: "Explore Our Courses",
+      },
+      consulting: {
+        label: "Consulting",
+        title: "Expert Consulting",
+        sliderDescription:
+          "Receive expert advice tailored to your specific needs. Our consulting services are designed to provide you with the insights and support necessary to succeed in your endeavors.",
+        button: "Get Expert Advice",
+      },
+      studyGroups: {
+        label: "Study Groups",
+        title: "Empower Your Learning with Collaborative Groups",
+        sliderDescription:
+          "Join our peer study groups and research collaboration groups to enhance your learning experience. Engage with fellow students, share knowledge, and collaborate on projects to achieve academic excellence.",
+        button: "Join a Study Group",
+      },
+      coaching: {
+        label: "Coaching Services",
+        title: "Excel with Personalized Coaching",
+        sliderDescription:
+          "Receive tailored coaching for your exam and interview preparations. Our experienced coaches provide one-on-one guidance to build your confidence and ensure success in your medical career.",
+        button: "Learn More About Coaching",
+      },
+      professional: {
+        label: "Professional Development",
+        title: "Career Advancement",
+        sliderDescription:
+          "Benefit from our comprehensive professional services, including project assistance, immigration support, patent registration, and more. We offer the tools and guidance you need to achieve your professional aspirations.",
+        button: "Discover Our Services",
+      },
+    },
+    blog: {
+      title: "Stay Updated with the Latest Insights",
+      subtitle:
+        "Explore our blog for the latest news, tips, and strategies in the medical field.",
+      exploreButton: "Explore Now",
+      posts: [
+        {
+          id: 1,
+          title: "What is Lorem Ipsum?",
+          content:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1500s ...",
+          image: "/assets/blog-img.png",
+          link: "#",
+        },
+        {
+          id: 2,
+          title: "Contrary to popular belief",
+          content:
+            "Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin ...",
+          image: "/assets/blog-img.png",
+          link: "#",
+        },
+        {
+          id: 3,
+          title: "The standard Lorem Ipsum passage",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ...",
+          image: "/assets/blog-img.png",
+          link: "#",
+        },
+      ],
     },
     testimonials: {
       title: "See What Our Students Are Saying",
@@ -140,38 +172,6 @@ const en = {
           image: "/assets/testimonial-img-1.png",
           quote:
             "The peer study groups provided a great platform for collaborative learning. I gained valuable insights and support from fellow students.",
-        },
-      ],
-    },
-    blog: {
-      title: "Stay Updated with the Latest Insights",
-      subtitle:
-        "Explore our blog for the latest news, tips, and strategies in the medical field",
-      exploreButton: "Explore Now",
-      posts: [
-        {
-          id: 1,
-          title: "What is Lorem Ipsum?",
-          content:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1500s ...",
-          image: "/assets/blog-img.png",
-          link: "#",
-        },
-        {
-          id: 2,
-          title: "Contrary to popular belief",
-          content:
-            "Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin ...",
-          image: "/assets/blog-img.png",
-          link: "#",
-        },
-        {
-          id: 3,
-          title: "The standard Lorem Ipsum passage",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ...",
-          image: "/assets/blog-img.png",
-          link: "#",
         },
       ],
     },
@@ -511,7 +511,7 @@ const en = {
       button: "Contact StudySmart",
     },
   },
-  language: "العربية",
+  language: "فارسی",
   openMenu: "Open main menu",
   closeMenu: "Close main menu",
   aboutTitle: "About StudySmart",
@@ -794,129 +794,152 @@ const en = {
     },
   },
   recentArticlesPage: {
-    title: 'Recent Articles',
+    title: "Recent Articles",
     sort: {
-      label: 'Sort:',
-      options: [
-        'Newest',
-        'Popular',
-        'Most Viewed'
-      ]
+      label: "Sort:",
+      options: ["Newest", "Popular", "Most Viewed"],
     },
     articles: [
       {
-        title: 'It takes what it takes to end something',
-        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
-        date: '02 MAY 2024'
+        title: "It takes what it takes to end something",
+        description:
+          "Alteration in some form, by injected humour, sheets containing Ipsum passages and more",
+        date: "02 MAY 2024",
       },
       {
-        title: 'Control about the blind texts it almost unorthographics',
-        description: 'There are many variations of passages of available not the majority have suffered alteration',
-        date: '02 MAY 2024'
+        title: "Control about the blind texts it almost unorthographics",
+        description:
+          "There are many variations of passages of available not the majority have suffered alteration",
+        date: "02 MAY 2024",
       },
       {
-        title: 'There are many variations of passages of available',
-        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
-        date: '02 MAY 2024'
+        title: "There are many variations of passages of available",
+        description:
+          "Alteration in some form, by injected humour, sheets containing Ipsum passages and more",
+        date: "02 MAY 2024",
       },
       {
-        title: 'Feel the charm of existence in this spot',
-        description: 'There are many variations of passages of available not the majority have suffered alteration',
-        date: '02 MAY 2024'
+        title: "Feel the charm of existence in this spot",
+        description:
+          "There are many variations of passages of available not the majority have suffered alteration",
+        date: "02 MAY 2024",
       },
       {
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
-        date: '02 MAY 2024'
+        title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+        date: "02 MAY 2024",
       },
       {
-        title: 'Continual delighted as elsewhere am convinced unfeeling',
-        description: 'To loud lady whom my mile sold four. Need miss all four case fine age tell',
-        date: '02 MAY 2024'
+        title: "Continual delighted as elsewhere am convinced unfeeling",
+        description:
+          "To loud lady whom my mile sold four. Need miss all four case fine age tell",
+        date: "02 MAY 2024",
       },
       {
-        title: 'View busy dine oh in knew if even',
-        description: 'Far own oh her equal old fanny. Difficulty invitation put introduced see middletons nor preference',
-        date: '02 MAY 2024'
+        title: "View busy dine oh in knew if even",
+        description:
+          "Far own oh her equal old fanny. Difficulty invitation put introduced see middletons nor preference",
+        date: "02 MAY 2024",
       },
       {
-        title: 'Although moreover mistaken kindness me feelings',
-        description: 'Son over own why with tell her cold upon. Cordial village and settled she ability law herself',
-        date: '02 MAY 2024'
+        title: "Although moreover mistaken kindness me feelings",
+        description:
+          "Son over own why with tell her cold upon. Cordial village and settled she ability law herself",
+        date: "02 MAY 2024",
       },
       {
-        title: 'Knowledge nay estimable questions repulsive daughters boy',
-        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
-        date: '02 MAY 2024'
+        title: "Knowledge nay estimable questions repulsive daughters boy",
+        description:
+          "Alteration in some form, by injected humour, sheets containing Ipsum passages and more",
+        date: "02 MAY 2024",
       },
       {
-        title: 'Solicitude gay way unaffected expression for',
-        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
-        date: '02 MAY 2024'
+        title: "Solicitude gay way unaffected expression for",
+        description:
+          "Alteration in some form, by injected humour, sheets containing Ipsum passages and more",
+        date: "02 MAY 2024",
       },
       {
-        title: 'His mistress ladyship required off horrible disposed rejoiced',
-        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
-        date: '02 MAY 2024'
+        title: "His mistress ladyship required off horrible disposed rejoiced",
+        description:
+          "Alteration in some form, by injected humour, sheets containing Ipsum passages and more",
+        date: "02 MAY 2024",
       },
       {
-        title: 'Unpleasing pianoforte unreserved as oh he unpleasant',
-        description: 'Alteration in some form, by injected humour, sheets containing Ipsum passages and more',
-        date: '02 MAY 2024'
-      }
-    ]
+        title: "Unpleasing pianoforte unreserved as oh he unpleasant",
+        description:
+          "Alteration in some form, by injected humour, sheets containing Ipsum passages and more",
+        date: "02 MAY 2024",
+      },
+    ],
   },
   singleBlogPage: {
-    date: '02 MAY 2024',
-    title: 'Control about the blind texts it almost unorthographics',
+    date: "02 MAY 2024",
+    title: "Control about the blind texts it almost unorthographics",
     content: {
-      intro: 'Continual delighted as elsewhere am convinced unfeeling. Introduced stimulated attachment no by projection. To loud lady whom my mile sold four. Need miss all four case fine age tell. He families my pleasant speaking it bringing it thoughts. View busy dine oh in knew if even. Boy these along far own other equal old fanny charm. Difficulty invitation put introduced see middletons nor preference.',
-      middle: 'Although moreover mistaken kindness me feelings do be marianne. Son over own nay with tell they cold upon are. Cordial village and settled she ability law herself. Finished why bringing but sir bachelor unpacked any thoughts. Unpleasing unsatiable particular inquietude did nor sir. Get his declared appetite distance his together now families. Friends am himself at on norland it viewing. Suspected elsewhere you belonging continued commanded she.',
-      third: 'Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable cultivated admiration far.',
-      subTitle: 'Their could can widen ten she any',
-      fourth: 'As so we smart those money in. Am wrote up whole so tears sense oh. Absolute required of reserved in offering no. How sense found our those gay again taken the. Had mrs outweigh desirous sex overcame. Improved property reserved disposal do offering me.',
-      conclusion: 'Although moreover mistaken kindness me feelings do be marianne. Son over own nay with tell they cold upon are. Cordial village and settled she ability law herself. Finished why bringing but sir bachelor unpacked any thoughts. Unpleasing unsatiable particular inquietude did nor sir. Get his declared appetite distance his together now families. Friends am himself at on norland it viewing. Suspected elsewhere you belonging continued commanded she.'
+      intro:
+        "Continual delighted as elsewhere am convinced unfeeling. Introduced stimulated attachment no by projection. To loud lady whom my mile sold four. Need miss all four case fine age tell. He families my pleasant speaking it bringing it thoughts. View busy dine oh in knew if even. Boy these along far own other equal old fanny charm. Difficulty invitation put introduced see middletons nor preference.",
+      middle:
+        "Although moreover mistaken kindness me feelings do be marianne. Son over own nay with tell they cold upon are. Cordial village and settled she ability law herself. Finished why bringing but sir bachelor unpacked any thoughts. Unpleasing unsatiable particular inquietude did nor sir. Get his declared appetite distance his together now families. Friends am himself at on norland it viewing. Suspected elsewhere you belonging continued commanded she.",
+      third:
+        "Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for. His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable cultivated admiration far.",
+      subTitle: "Their could can widen ten she any",
+      fourth:
+        "As so we smart those money in. Am wrote up whole so tears sense oh. Absolute required of reserved in offering no. How sense found our those gay again taken the. Had mrs outweigh desirous sex overcame. Improved property reserved disposal do offering me.",
+      conclusion:
+        "Although moreover mistaken kindness me feelings do be marianne. Son over own nay with tell they cold upon are. Cordial village and settled she ability law herself. Finished why bringing but sir bachelor unpacked any thoughts. Unpleasing unsatiable particular inquietude did nor sir. Get his declared appetite distance his together now families. Friends am himself at on norland it viewing. Suspected elsewhere you belonging continued commanded she.",
     },
-    quote: 'Received overcame oh sensible so at an. Formed do change merely to county it. Am separate contempt domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too. Replied exposed savings he no viewing as up. Soon body add him hill. No father living really people estate if. Mistake do produce beloved demesne if am pursuit.',
-    searchPlaceholder: 'Search...',
-    popularPostsTitle: 'Popular Posts',
-    tagsTitle: 'Tags',
-    relatedPostsTitle: 'Related Posts',
-    shareText: 'Shares:',
+    quote:
+      "Received overcame oh sensible so at an. Formed do change merely to county it. Am separate contempt domestic to to oh. On relation my so addition branched. Put hearing cottage she norland letters equally prepare too. Replied exposed savings he no viewing as up. Soon body add him hill. No father living really people estate if. Mistake do produce beloved demesne if am pursuit.",
+    searchPlaceholder: "Search...",
+    popularPostsTitle: "Popular Posts",
+    tagsTitle: "Tags",
+    relatedPostsTitle: "Related Posts",
+    shareText: "Shares:",
     popularPosts: [
       {
-        title: 'Start your first week of a new job like a boss',
-        date: '02 MAY 2024',
-        image: '/assets/popular-posts1.jpg'
+        title: "Start your first week of a new job like a boss",
+        date: "02 MAY 2024",
+        image: "/assets/popular-posts1.jpg",
       },
       {
-        title: 'Pioneering a new twist on a co-working modeles',
-        date: '02 MAY 2024',
-        image: '/assets/popular-posts2.jpg'
+        title: "Pioneering a new twist on a co-working modeles",
+        date: "02 MAY 2024",
+        image: "/assets/popular-posts2.jpg",
       },
       {
-        title: 'The white-label software model in fintech',
-        date: '02 MAY 2024',
-        image: '/assets/popular-posts3.jpg'
-      }
+        title: "The white-label software model in fintech",
+        date: "02 MAY 2024",
+        image: "/assets/popular-posts3.jpg",
+      },
     ],
-    tags: ['science', 'control', 'unorthographics', 'blind', 'knowledge', 'StudySmart'],
+    tags: [
+      "science",
+      "control",
+      "unorthographics",
+      "blind",
+      "knowledge",
+      "StudySmart",
+    ],
     relatedPosts: [
       {
-        title: 'Control about the blind texts it almost unorthographics',
-        date: '02 MAY 2024',
-        image: '/assets/quicklinks/link1.jpg',
+        title: "Control about the blind texts it almost unorthographics",
+        date: "02 MAY 2024",
+        image: "/assets/quicklinks/link1.jpg",
       },
       {
-        title: 'There are many variations of passages of available not the majority have suffered',
-        date: '02 MAY 2024',
-        image: '/assets/quicklinks/link2.jpg',
+        title:
+          "There are many variations of passages of available not the majority have suffered",
+        date: "02 MAY 2024",
+        image: "/assets/quicklinks/link2.jpg",
       },
       {
-        title: 'Feel the charm of existence in this spot, which was created for the bliss of souls like mine',
-        date: '02 MAY 2024',
-        image: '/assets/quicklinks/link3.jpg',
-      }
+        title:
+          "Feel the charm of existence in this spot, which was created for the bliss of souls like mine",
+        date: "02 MAY 2024",
+        image: "/assets/quicklinks/link3.jpg",
+      },
     ],
   },
 };

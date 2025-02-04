@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   const { t, locale } = useLanguage();
-  const isRTL = locale === "ar";
+  const isRTL = locale === "fa";
 
   return (
     <section className="min-h-screen bg-primary flex items-center justify-center px-4 md:px-8 md:py-[75px] py-[36px] mt-[-7px]">

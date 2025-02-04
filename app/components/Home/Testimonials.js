@@ -32,7 +32,7 @@ export default function Testimonials() {
             slidesPerView={1}
             centeredSlides={true}
             loop={true}
-            dir={locale === "ar" ? "rtl" : "ltr"} // Added dir prop
+            dir={locale === "fa" ? "rtl" : "ltr"} // Added dir prop
             coverflowEffect={{
               rotate: 0,
               stretch: 0,

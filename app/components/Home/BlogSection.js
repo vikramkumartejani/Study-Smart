@@ -12,7 +12,7 @@ export default function BlogSection() {
     <section className="bg-primary">
       <div
         className={`bg-[#FCFCFC] px-4 md:px-8 py-[75px] rounded-tl-[64px] ${
-          locale === "ar" ? "rtl" : "ltr"
+          locale === "fa" ? "rtl" : "ltr"
         }`}
       >
         <div className="max-w-[1280px] mx-auto">
@@ -40,7 +40,7 @@ export default function BlogSection() {
                 <p className="text-light mb-4 flex-grow">{post.content}</p>
                 <BsArrowRight
                   className={`${
-                    locale === "ar" ? "me-auto rotate-180" : "ms-auto"
+                    locale === "fa" ? "me-auto rotate-180" : "ms-auto"
                   } text-dark w-[20px] h-[20px] group-hover:translate-x-1 transition-all transition-transform`}
                 />
               </article>
@@ -51,7 +51,7 @@ export default function BlogSection() {
             <p className="text-middle mb-6">{t("home.blog.subtitle")}</p>
             <button className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary text-dark font-medium hover:bg-primary/5 transition-colors duration-400 ease-in-out">
               {t("home.blog.exploreButton")}
-              <BsArrowRight className={locale === "ar" ? "rotate-180" : ""} />
+              <BsArrowRight className={locale === "fa" ? "rotate-180" : ""} />
             </button>
           </div>
         </div>

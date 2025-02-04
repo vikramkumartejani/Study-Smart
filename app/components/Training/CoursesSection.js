@@ -54,7 +54,7 @@ export function Course({
 
         <button className="inline-flex items-center gap-2 px-[40px] py-3 rounded-full border-2 border-primary text-dark font-[500] hover:bg-primary hover:text-white transition-colors">
           {buttonText}
-          <BsArrowRight className={`${locale === "ar" ? "rotate-180" : ""}`} />
+          <BsArrowRight className={`${locale === "fa" ? "rotate-180" : ""}`} />
         </button>
       </div>
 

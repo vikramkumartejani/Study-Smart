@@ -34,7 +34,7 @@ export default function Navbar() {
       >
         <div
           className={`max-w-[1440px] mx-auto px-4 sm:px-6 xl:px-8 py-4 ${
-            locale === "ar" ? "rtl" : "ltr"
+            locale === "fa" ? "rtl" : "ltr"
           }`}
         >
           <div className="flex justify-between">

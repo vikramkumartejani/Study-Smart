@@ -88,7 +88,7 @@ export default function MobileMenu() {
                     alt="arrow-right"
                     width={16}
                     height={16}
-                    className={locale === "ar" ? "rotate-180" : ""}
+                    className={locale === "fa" ? "rotate-180" : ""}
                   />
                 </span>
               </Link>

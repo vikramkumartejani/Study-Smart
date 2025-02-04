@@ -1,11 +1,11 @@
-import {NextIntlClientProvider} from 'next-intl';
-import {notFound} from 'next/navigation';
+import { NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'ar'}];
+  return [{ locale: "en" }, { locale: "fa" }];
 }
 
-export default async function LocaleLayout({children, params: {locale}}) {
+export default async function LocaleLayout({ children, params: { locale } }) {
   let messages;
   try {
     messages = (await import(`../translations/${locale}.js`)).default;
@@ -22,4 +22,4 @@ export default async function LocaleLayout({children, params: {locale}}) {
       </body>
     </html>
   );
-} 
+}
