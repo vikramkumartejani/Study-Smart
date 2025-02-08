@@ -1,20 +1,55 @@
 "use client";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../../context/LanguageContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 
 export default function SingleBlogPage() {
-  const { slug } = useParams();
+  const { id } = useParams();
+  const searchParams = useSearchParams();
+  const api = searchParams.get("api"); // Correct way to get query params
   const [trendingTopics, setTrendingTopics] = useState([]);
   const { t, locale } = useLanguage();
-  const popularPosts = t("singleBlogPage.popularPosts");
   const tags = t("singleBlogPage.tags");
-  const relatedPosts = t("singleBlogPage.relatedPosts");
   const [blogs, setBlogs] = useState([]);
   const [recentArticles, setRecentArticles] = useState([]);
+
+  useEffect(() => {
+    console.log("Current slug:", id);
+    console.log("API Type:", api);
+
+    const fetchData = async () => {
+      if (!id || !api) return;
+
+      let endpoint = "";
+      if (api === "trending") {
+        endpoint = "http://localhost:1337/api/trending-topics";
+      } else if (api === "article") {
+        endpoint = "http://localhost:1337/api/recent-articles";
+      } else if (api === "blog") {
+        endpoint = "http://localhost:1337/api/blog-posts";
+      }
+
+      try {
+        const response = await axios.get(endpoint, {
+          params: {
+            populate: "*",
+            filters: { slug: id },
+          },
+        });
+
+        console.log(response.data);
+        setTrendingTopics(response?.data?.data[0]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    console.log("object", trendingTopics);
+    fetchData();
+  }, [id, api]); // Runs when id or api changes
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -23,7 +58,6 @@ export default function SingleBlogPage() {
           await Promise.all([
             fetch("http://localhost:1337/api/blog-posts?populate=*"),
             fetch("http://localhost:1337/api/recent-articles?populate=*"),
-            fetch("http://localhost:1337/api/trending-topics?populate=*"),
           ]);
 
         const blogsData = await blogsResponse.json();
@@ -32,7 +66,6 @@ export default function SingleBlogPage() {
 
         setBlogs(blogsData.data);
         setRecentArticles(articlesData.data);
-        setTrendingTopics(trendingData.data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -42,28 +75,6 @@ export default function SingleBlogPage() {
 
     fetchBlogs();
   }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost:1337/api/trending-topics",
-          {
-            params: {
-              populate: "*",
-              filters: { slug: "7868" },
-            },
-          }
-        );
-        console.log(response.data);
-        setTrendingTopics(response?.data?.data[0]);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, [slug]);
 
   return (
     <div className={`w-full bg-[#FCFCFC] ${locale === "fa" ? "rtl" : "ltr"}`}>
@@ -110,9 +121,8 @@ export default function SingleBlogPage() {
               </p>
               <Image
                 src={
-                  trendingTopics.Image?.[0]?.url
-                    ? `http://localhost:1337${trendingTopics.Image[0].url}`
-                    : "/assets/articles/article1.jpg"
+                  trendingTopics.Image?.[0]?.url &&
+                  `http://localhost:1337${trendingTopics.Image[0].url}`
                 }
                 alt={"Blog Image"}
                 width={952}

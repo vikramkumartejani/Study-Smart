@@ -8,17 +8,31 @@ export default function Mag() {
   const { t, locale } = useLanguage();
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [recentArticles, setRecentArticles] = useState([]);
+  const [trendingTopics, setTrendingTopics] = useState([]);
 
-  // Fetch blogs from Strapi
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:1337/api/blog-posts?populate=*');
-        const data = await response.json();
-        setBlogs(data.data);
+        const [blogsResponse, articlesResponse, trendingResponse] =
+          await Promise.all([
+            fetch("http://localhost:1337/api/blog-posts?populate=*"),
+            fetch("http://localhost:1337/api/recent-articles?populate=*"),
+            fetch("http://localhost:1337/api/trending-topics?populate=*"),
+          ]);
+
+        const blogsData = await blogsResponse.json();
+        const articlesData = await articlesResponse.json();
+        const trendingData = await trendingResponse.json();
+
+        setBlogs(blogsData.data);
+        console.log(trendingData);
+        console.log("cllgllg", trendingData);
+        setRecentArticles(articlesData.data);
+        setTrendingTopics(trendingData.data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching blogs:', error);
+        console.error("Error fetching data:", error);
         setLoading(false);
       }
     };
@@ -49,121 +63,109 @@ export default function Mag() {
     "/assets/trending/topic4.jpg",
   ];
 
-  const quickLinkImages = [
-    "/assets/quicklinks/link1.jpg",
-    "/assets/quicklinks/link2.jpg",
-    "/assets/quicklinks/link3.jpg",
-  ];
-
-  // Map the translations with corresponding images
-  const recentArticles = t("magPage.sections.recentArticles.articles").map(
-    (article, index) => ({
-      ...article,
-      image: recentArticleImages[index] || recentArticleImages[0],
-      alt: article.title,
-    })
-  );
-
-  const trendingTopics = t("magPage.sections.trendingTopics.topics").map(
-    (topic, index) => ({
-      ...topic,
-      image: trendingTopicImages[index] || trendingTopicImages[0],
-      alt: topic.title,
-    })
-  );
-
-  const quickLinks = t("magPage.sections.quickLinks.articles").map(
-    (link, index) => ({
-      ...link,
-      image: quickLinkImages[index] || quickLinkImages[0],
-      alt: link.title,
-    })
-  );
-
   return (
     <div className={`w-full bg-[#FCFCFC] ${locale === "fa" ? "rtl" : "ltr"}`}>
       {/* Hero Article */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-16 pb-16 xl:py-16">
         {loading ? (
           <div>Loading...</div>
-        ) : blogs.length > 0 && (
-          <div className="flex items-center lg:items-start lg:flex-row flex-col gap-4">
-            <div className="relative">
-              <Image
-                src={"/assets/mag-one.png"}
-                alt={blogs[0].title}
-                className="h-[392px] max-w-full lg:max-w-[500px] xl:max-w-[650px] rounded-xl object-cover"
-                width={709}
-                height={392}
-              />
-            </div>
-            <div className="flex flex-col justify-center mt-2 lg:mt-4">
-              <span className="text-[#6D8CAD] text-[16px] leading-[20px] font-normal mb-2 lg:mb-6">
-                {new Date(blogs[0].Published).toLocaleDateString()}
-              </span>
-              <h2 className="text-[30px] leading-[37.5px] font-bold text-dark mb-2 lg:mb-6">
-                {blogs[0].title}
-              </h2>
-              <p className="text-[#4D637B] text-lg leading-[22.5px] font-light mb-8 lg:mb-10">
-                {blogs[0].Description}
-              </p>
-              <Link
-                href={`/blog/${blogs[0].slug}`}
-                className="inline-flex items-center justify-center text-dark hover:text-white text-[18px] font-medium border-2 border-[#1848AD] w-full lg:w-[202px] h-[55px] rounded-[31px] group hover:bg-[#1848AD] transition-all duration-300"
-              >
-                <span className="mr-2">{t("magPage.hero.readMore")}</span>
+        ) : (
+          blogs.length > 0 && (
+            <div className="flex items-center lg:items-start lg:flex-row flex-col gap-4">
+              <div className="relative">
                 <Image
-                  src="/assets/mag-arrow.svg"
-                  alt={locale === "fa" ? "سهم للمزيد" : "Read more arrow"}
-                  width={20}
-                  height={20}
-                  className="group-hover:hidden block"
+                  src={
+                    blogs[0].Image?.[0]?.url
+                      ? `http://localhost:1337${blogs[0].Image[0].url}`
+                      : "/assets/articles/article1.jpg"
+                  }
+                  alt={blogs[0].title}
+                  className="h-[392px] max-w-full lg:max-w-[500px] xl:max-w-[650px] rounded-xl object-cover"
+                  width={709}
+                  height={392}
                 />
-                <Image
-                  src="/assets/white-arrow.svg"
-                  alt={locale === "fa" ? "سهم للمزيد" : "Read more arrow"}
-                  width={20}
-                  height={20}
-                  className="hidden group-hover:block"
-                />
-              </Link>
+              </div>
+              <div className="flex flex-col justify-center mt-2 lg:mt-4">
+                <span className="text-[#6D8CAD] text-[16px] leading-[20px] font-normal mb-2 lg:mb-6">
+                  {new Date(blogs[0].Published).toLocaleDateString()}
+                </span>
+                <h2 className="text-[30px] leading-[37.5px] font-bold text-dark mb-2 lg:mb-6">
+                  {blogs[0].title}
+                </h2>
+                <p className="text-[#4D637B] text-lg leading-[22.5px] font-light mb-8 lg:mb-10">
+                  {blogs[0].Description}
+                </p>
+                <Link
+                  href={`/single-mag-page/${blogs[0].slug}`}
+                  className="inline-flex items-center justify-center text-dark hover:text-white text-[18px] font-medium border-2 border-[#1848AD] w-full lg:w-[202px] h-[55px] rounded-[31px] group hover:bg-[#1848AD] transition-all duration-300"
+                >
+                  <span className="mr-2">{t("magPage.hero.readMore")}</span>
+                  <Image
+                    src="/assets/mag-arrow.svg"
+                    alt={locale === "fa" ? "سهم للمزيد" : "Read more arrow"}
+                    width={20}
+                    height={20}
+                    className="group-hover:hidden block"
+                  />
+                  <Image
+                    src="/assets/white-arrow.svg"
+                    alt={locale === "fa" ? "سهم للمزيد" : "Read more arrow"}
+                    width={20}
+                    height={20}
+                    className="hidden group-hover:block"
+                  />
+                </Link>
+              </div>
             </div>
-          </div>
+          )
         )}
       </div>
 
       {/* Quick Links */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-[26px] pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {quickLinks.map((link, index) => (
-            <div
-              key={index}
-              className="p-4 bg-white rounded-xl hover:shadow-sm transition-all duration-300"
-            >
-              <Image src={link.image} alt={link.alt} width={160} height={160} />
-              <h3 className="text-[18px] leading-[22.5px] font-medium text-dark mt-4 mb-2">
-                {link.title}
-              </h3>
-              <p className="text-[#4D637B] text-base leading-[20px] font-light">
-                {link.description}
-              </p>
-              <div className="mt-4 flex items-center justify-between">
-                <span className="text-[#4D637B] text-sm">{link.date}</span>
-                <Link
-                  href="#"
-                  className="inline-flex items-center text-[#6D8CAD] text-[14px] font-normal leading-[17.5px]"
-                >
-                  <span className="sr-only">Read more</span>
-                  <Image
-                    src="/assets/mag-arrow.svg"
-                    alt="arrow"
-                    width={20}
-                    height={20}
-                  />
-                </Link>
+          {!loading &&
+            blogs.slice(1).map((link) => (
+              <div
+                key={link.id}
+                className="p-4 bg-white rounded-xl hover:shadow-sm transition-all duration-300"
+              >
+                <Image
+                  src={
+                    link.Image?.[0]?.url
+                      ? `http://localhost:1337${link.Image[0].url}`
+                      : "/assets/articles/article1.jpg"
+                  }
+                  alt={link.alt}
+                  width={160}
+                  height={160}
+                />
+                <h3 className="text-[18px] leading-[22.5px] font-medium text-dark mt-4 mb-2">
+                  {link.title}
+                </h3>
+                <p className="text-[#4D637B] text-base leading-[20px] font-light">
+                  {link.Description}
+                </p>
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="text-[#4D637B] text-sm">
+                    {" "}
+                    {new Date(link.publishedAt).toLocaleDateString()}
+                  </span>
+                  <Link
+                    href={`/single-mag-page/${link.slug}`}
+                    className="inline-flex items-center text-[#6D8CAD] text-[14px] font-normal leading-[17.5px]"
+                  >
+                    <span className="sr-only">Read more</span>
+                    <Image
+                      src="/assets/mag-arrow.svg"
+                      alt="arrow"
+                      width={20}
+                      height={20}
+                    />
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
 
@@ -187,27 +189,30 @@ export default function Mag() {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {!loading && blogs.slice(1).map((blog) => (
-            <div key={blog.id} className="flex items-center gap-4">
-              <Image
-                src={blog.Image?.[0]?.url 
-                  ? `http://localhost:1337${blog.Image[0].url}`
-                  : "/assets/articles/article1.jpg"}
-                alt={blog.title}
-                width={100}
-                height={100}
-                className="min-h-[100px] min-w-[100px] object-cover rounded"
-              />
-              <div>
-                <h4 className="text-[#6D8CAD] text-[14px] font-normal leading-[17.5px] mb-2">
-                  {new Date(blog.Published).toLocaleDateString()}
-                </h4>
-                <p className="text-dark text-[16px] leading-[20px] font-light">
-                  {blog.title}
-                </p>
+          {!loading &&
+            recentArticles.slice(1).map((blog) => (
+              <div key={blog.id} className="flex items-center gap-4">
+                <Image
+                  src={
+                    blog.image?.[0]?.url
+                      ? `http://localhost:1337${blog.image[0].url}`
+                      : "/assets/articles/article1.jpg"
+                  }
+                  alt={blog.title}
+                  width={100}
+                  height={100}
+                  className="min-h-[100px] min-w-[100px] object-cover rounded"
+                />
+                <div>
+                  <h4 className="text-[#6D8CAD] text-[14px] font-normal leading-[17.5px] mb-2">
+                    {new Date(blog.publishedAt).toLocaleDateString()}
+                  </h4>
+                  <p className="text-dark text-[16px] leading-[20px] font-light">
+                    {blog.title}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
 
@@ -237,7 +242,11 @@ export default function Mag() {
               className="p-4 bg-white rounded-xl hover:shadow-sm transition-all duration-300"
             >
               <Image
-                src={topic.image}
+                src={
+                  topic.Image?.[0]?.url
+                    ? `http://localhost:1337${topic.Image[0].url}`
+                    : "/assets/articles/article1.jpg"
+                }
                 alt={topic.alt}
                 className="rounded-xl"
                 width={315}
@@ -248,10 +257,10 @@ export default function Mag() {
                   {topic.title}
                 </h3>
                 <p className="text-[#4D637B] text-base leading-[20px] font-light my-2">
-                  {topic.description}
+                  {topic.Description}
                 </p>
                 <Link
-                  href="#"
+                  href={`/single-mag-page/${topic.slug}?api=trending`}
                   className="text-black flex items-end justify-end"
                 >
                   <Image

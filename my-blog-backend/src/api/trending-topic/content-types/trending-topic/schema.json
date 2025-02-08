@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trending_topics",
+  "info": {
+    "singularName": "trending-topic",
+    "pluralName": "trending-topics",
+    "displayName": "Trending Topic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Content": {
+      "type": "richtext"
+    }
+  }
+}
