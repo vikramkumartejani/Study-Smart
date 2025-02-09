@@ -9,6 +9,8 @@ export default function RecentArticles() {
   const sortOptions = t("recentArticlesPage.sort.options");
   const [activeSort, setActiveSort] = useState(sortOptions[0]);
   const [articles, setArticles] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 12;
 
   useEffect(() => {
     async function fetchArticles() {
@@ -25,6 +27,15 @@ export default function RecentArticles() {
     }
     fetchArticles();
   }, []);
+
+  const indexOfLastArticle = currentPage * articlesPerPage;
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+  const currentArticles = articles.slice(
+    indexOfFirstArticle,
+    indexOfLastArticle
+  );
+
+  const totalPages = Math.ceil(articles.length / articlesPerPage);
 
   return (
     <div className={`w-full bg-[#FCFCFC] ${locale === "fa" ? "rtl" : "ltr"}`}>
@@ -61,7 +72,7 @@ export default function RecentArticles() {
 
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {articles.map((article, index) => (
+          {currentArticles.map((article, index) => (
             <Link
               href={`/single-mag-page/${article.slug}?api=article`}
               key={index}
@@ -106,8 +117,11 @@ export default function RecentArticles() {
 
         {/* Pagination */}
         <div className="flex justify-center items-center gap-2 sm:gap-4 mt-20">
-          <button className="p-2 text-[#6D8CAD] hover:text-dark">
-            <span className="sr-only">Previous page</span>
+          <button
+            className="p-2 text-[#6D8CAD] hover:text-dark"
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+          >
             <Image
               src="/assets/arrow-right.svg"
               alt="Previous"
@@ -116,20 +130,26 @@ export default function RecentArticles() {
               className="rotate-180"
             />
           </button>
-          {[1, 2, 3, "...", 9, 10].map((page, index) => (
+          {[...Array(totalPages)].map((_, index) => (
             <button
               key={index}
+              onClick={() => setCurrentPage(index + 1)}
               className={`min-w-8 sm:min-w-10 min-h-8 sm:min-h-10 text-base font-light leading-[20px] flex items-center justify-center rounded ${
-                page === 1
+                currentPage === index + 1
                   ? "bg-[#9CD4B4] text-white"
                   : "text-dark hover:text-dark"
               }`}
             >
-              {page}
+              {index + 1}
             </button>
           ))}
-          <button className="p-2 text-[#6D8CAD] hover:text-dark">
-            <span className="sr-only">Next page</span>
+          <button
+            className="p-2 text-[#6D8CAD] hover:text-dark"
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            disabled={currentPage === totalPages}
+          >
             <Image
               src="/assets/arrow-right.svg"
               alt="Next"
