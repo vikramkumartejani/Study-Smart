@@ -114,11 +114,12 @@ export default function Mag() {
                       ? `http://localhost:1337${link.image[0].url}`
                       : "/assets/articles/article1.jpg"
                   }
+                  className="bg-cover bg-black w-full h-[200px]"
                   alt={link.alt}
                   width={160}
                   height={160}
                 />
-                <h3 className="text-[18px] leading-[22.5px] font-medium text-dark mt-4 mb-2">
+                <h3 className="text-[18px] leading-[22.5px]  font-medium text-dark mt-4 mb-2">
                   {link.title}
                 </h3>
                 <p className="text-[#4D637B] text-base leading-[20px] font-light">
@@ -234,10 +235,11 @@ export default function Mag() {
               />
               <div>
                 <h3 className="text-[18px] leading-[22.5px] font-medium text-dark mt-4">
-                  {topic.title}
+                  {(topic.title || "").split(" ").slice(0, 6).join(" ") + "..."}
                 </h3>
                 <p className="text-[#4D637B] text-base leading-[20px] font-light my-2">
-                  {topic.Description}
+                  {(topic.Description || "").split(" ").slice(0, 20).join(" ") +
+                    "..."}
                 </p>
                 <div className="text-black flex items-end justify-end">
                   <Image
