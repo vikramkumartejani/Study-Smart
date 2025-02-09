@@ -2,36 +2,29 @@
 import { useLanguage } from "../context/LanguageContext";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function RecentArticles() {
   const { t, locale } = useLanguage();
-  // Initialize with the first option from the array
   const sortOptions = t("recentArticlesPage.sort.options");
   const [activeSort, setActiveSort] = useState(sortOptions[0]);
+  const [articles, setArticles] = useState([]);
 
-  // Define article images array
-  const articleImages = [
-    "/assets/articles/article1.jpg",
-    "/assets/articles/article2.jpg",
-    "/assets/articles/article3.jpg",
-    "/assets/articles/article4.jpg",
-    "/assets/articles/article5.jpg",
-    "/assets/articles/article6.jpg",
-    "/assets/articles/article7.jpg",
-    "/assets/articles/article8.jpg",
-    "/assets/articles/article9.jpg",
-    "/assets/articles/article10.jpg",
-    "/assets/articles/article11.jpg",
-    "/assets/articles/article12.jpg",
-  ];
-
-  // Map articles with images
-  const articles = t("recentArticlesPage.articles").map((article, index) => ({
-    ...article,
-    image: articleImages[index] || articleImages[0],
-    alt: article.title,
-  }));
+  useEffect(() => {
+    async function fetchArticles() {
+      try {
+        const response = await fetch(
+          "http://localhost:1337/api/recent-articles?populate=*"
+        ); // Update with your actual API endpoint
+        const data = await response.json();
+        console.log(data.data);
+        setArticles(data.data);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+      }
+    }
+    fetchArticles();
+  }, []);
 
   return (
     <div className={`w-full bg-[#FCFCFC] ${locale === "fa" ? "rtl" : "ltr"}`}>
@@ -67,14 +60,17 @@ export default function RecentArticles() {
         </div>
 
         {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {articles.map((article, index) => (
-            <Link href="/single-mag-page" key={index}>
+            <Link
+              href={`/single-mag-page/${article.slug}?api=article`}
+              key={index}
+            >
               <div className="group cursor-pointer">
                 <div className="relative w-full h-[200px] mb-4">
                   <Image
-                    src={article.image}
-                    alt={article.alt}
+                    src={`http://localhost:1337${article.image[0].url}`}
+                    alt={article.title}
                     fill
                     className="rounded-xl object-cover"
                   />
@@ -84,7 +80,8 @@ export default function RecentArticles() {
                     {article.title}
                   </h3>
                   <p className="text-[#4D637B] text-base leading-[20px] font-light mb-4">
-                    {article.description}
+                    {article?.Description?.split(" ").slice(0, 20).join(" ") +
+                      (article.Description.split(" ").length > 20 ? "..." : "")}
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-[#6D8CAD] text-[14px]">
