@@ -54,29 +54,30 @@ export default function SingleBlogPage() {
 
   useEffect(() => {
     const fetchBlogs = async () => {
+      setLoading(true);
       try {
-        const [blogsResponse, articlesResponse, trendingResponse] =
-          await Promise.all([
-            fetch("http://localhost:1337/api/blog-posts?populate=*"),
-            fetch("http://localhost:1337/api/recent-articles?populate=*"),
-          ]);
+        const [blogsResponse, articlesResponse] = await Promise.all([
+          fetch("http://localhost:1337/api/blog-posts?populate=*"),
+          fetch("http://localhost:1337/api/recent-articles?populate=*"),
+        ]);
 
         const blogsData = await blogsResponse.json();
         const articlesData = await articlesResponse.json();
-        const trendingData = await trendingResponse.json();
 
-        setBlogs(blogsData.data);
-        setRecentArticles(articlesData.data);
-        console.log("ablogs", blogsData.data);
-        console.log("articlesData", articlesData.data);
-        setLoading(false);
+        setBlogs(blogsData.data || []);
+        setRecentArticles(articlesData.data || []);
+        console.log("Blogs:", blogsData.data);
+        console.log("Articles:", articlesData.data);
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
         setLoading(false);
       }
     };
 
-    fetchBlogs();
+    if (id && api) {
+      fetchBlogs();
+    }
   }, [id, api]);
 
   return (
@@ -221,7 +222,7 @@ export default function SingleBlogPage() {
                   {t("singleBlogPage.popularPostsTitle")}
                 </h2>
                 <div className="mt-6 space-y-8">
-                  {blogs.slice(1).map((post, index) => (
+                  {blogs.slice(0, 3).map((post, index) => (
                     <Link
                       href="#"
                       key={index}
@@ -240,7 +241,14 @@ export default function SingleBlogPage() {
                       />
                       <div>
                         <span className="text-[#6D8CAD] text-sm leading-[17.5px] font-normal mb-2 block">
-                          {post.publishedAt}
+                          {new Date(post.Published).toLocaleDateString(
+                            "en-US",
+                            {
+                              year: "numeric",
+                              month: "long",
+                              day: "numeric",
+                            }
+                          )}
                         </span>
                         <h3 className="text-base leading-[20px] font-light text-[#1F2833] line-clamp-2">
                           {post.title}
@@ -283,7 +291,7 @@ export default function SingleBlogPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {recentArticles.slice(1).map((post, index) => (
+            {recentArticles.slice(0, 3).map((post, index) => (
               <div
                 key={index}
                 className="p-4 bg-white rounded-xl hover:shadow-sm transition-all duration-300"
