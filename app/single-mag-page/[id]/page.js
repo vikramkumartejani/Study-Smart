@@ -292,8 +292,9 @@ export default function SingleBlogPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {recentArticles.slice(0, 3).map((post, index) => (
-              <div
+              <Link
                 key={index}
+                href={`/single-mag-page/${post.slug}?api=article`}
                 className="p-4 bg-white rounded-xl hover:shadow-sm transition-all duration-300"
               >
                 <Image
@@ -311,10 +312,7 @@ export default function SingleBlogPage() {
                 </h3>
                 <div className="mt-4 flex items-center justify-between">
                   <span className="text-[#4D637B] text-sm">{post.date}</span>
-                  <Link
-                    href={`/single-mag-page/${post.slug}?api=article`}
-                    className="inline-flex items-center text-[#6D8CAD] text-[14px] font-normal leading-[17.5px]"
-                  >
+                  <div className="inline-flex items-center text-[#6D8CAD] text-[14px] font-normal leading-[17.5px]">
                     <span className="sr-only">Read more</span>
                     <Image
                       src="/assets/mag-arrow.svg"
@@ -322,9 +320,9 @@ export default function SingleBlogPage() {
                       width={20}
                       height={20}
                     />
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

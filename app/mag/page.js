@@ -103,8 +103,9 @@ export default function Mag() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {!loading &&
             blogs.slice(1).map((link) => (
-              <div
+              <Link
                 key={link.id}
+                href={`/single-mag-page/${link.slug}?api=blog`}
                 className="p-4 bg-white rounded-xl hover:shadow-sm transition-all duration-300"
               >
                 <Image
@@ -128,10 +129,7 @@ export default function Mag() {
                     {" "}
                     {new Date(link.publishedAt).toLocaleDateString()}
                   </span>
-                  <Link
-                    href={`/single-mag-page/${link.slug}?api=blog`}
-                    className="inline-flex items-center text-[#6D8CAD] text-[14px] font-normal leading-[17.5px]"
-                  >
+                  <div className="inline-flex items-center text-[#6D8CAD] text-[14px] font-normal leading-[17.5px]">
                     <span className="sr-only">Read more</span>
                     <Image
                       src="/assets/mag-arrow.svg"
@@ -139,9 +137,9 @@ export default function Mag() {
                       width={20}
                       height={20}
                     />
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
         </div>
       </div>
@@ -153,7 +151,7 @@ export default function Mag() {
             {t("magPage.sections.recentArticles.title")}
           </h2>
           <Link
-            href="/blog"
+            href="/recent-articles"
             className="text-[#1848AD] text-[14px] font-normal leading-[17.5px] flex items-center gap-2"
           >
             {t("magPage.hero.seeAll")}
@@ -168,7 +166,11 @@ export default function Mag() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {!loading &&
             recentArticles.slice(1).map((blog) => (
-              <div key={blog.id} className="flex items-center gap-4">
+              <Link
+                href={`/single-mag-page/${blog.slug}?api=article`}
+                key={blog.id}
+                className="flex items-center gap-4"
+              >
                 <Image
                   src={
                     blog.image?.[0]?.url
@@ -188,7 +190,7 @@ export default function Mag() {
                     {blog.title}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
         </div>
       </div>
@@ -214,8 +216,9 @@ export default function Mag() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {trendingTopics.map((topic, index) => (
-            <div
+            <Link
               key={index}
+              href={`/single-mag-page/${topic.slug}?api=trending`}
               className="p-4 bg-white rounded-xl hover:shadow-sm transition-all duration-300"
             >
               <Image
@@ -236,19 +239,16 @@ export default function Mag() {
                 <p className="text-[#4D637B] text-base leading-[20px] font-light my-2">
                   {topic.Description}
                 </p>
-                <Link
-                  href={`/single-mag-page/${topic.slug}?api=trending`}
-                  className="text-black flex items-end justify-end"
-                >
+                <div className="text-black flex items-end justify-end">
                   <Image
                     src="/assets/mag-arrow.svg"
                     alt="arrow"
                     width={20}
                     height={20}
                   />
-                </Link>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
