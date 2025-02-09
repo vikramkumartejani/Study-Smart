@@ -224,7 +224,7 @@ export default function SingleBlogPage() {
                 <div className="mt-6 space-y-8">
                   {blogs.slice(0, 3).map((post, index) => (
                     <Link
-                      href="#"
+                      href={`/single-mag-page/${post.slug}?api=blog`}
                       key={index}
                       className="flex items-center gap-4"
                     >
@@ -312,7 +312,7 @@ export default function SingleBlogPage() {
                 <div className="mt-4 flex items-center justify-between">
                   <span className="text-[#4D637B] text-sm">{post.date}</span>
                   <Link
-                    href="#"
+                    href={`/single-mag-page/${post.slug}?api=article`}
                     className="inline-flex items-center text-[#6D8CAD] text-[14px] font-normal leading-[17.5px]"
                   >
                     <span className="sr-only">Read more</span>
