@@ -2,7 +2,7 @@
 import { useLanguage } from "../../context/LanguageContext";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useSearchParams } from "next/navigation";
 
@@ -14,6 +14,7 @@ export default function SingleBlogPage() {
   const { t, locale } = useLanguage();
   const tags = t("singleBlogPage.tags");
   const [blogs, setBlogs] = useState([]);
+  const [loadin, setLoading] = useState(false);
   const [recentArticles, setRecentArticles] = useState([]);
 
   useEffect(() => {
@@ -66,6 +67,8 @@ export default function SingleBlogPage() {
 
         setBlogs(blogsData.data);
         setRecentArticles(articlesData.data);
+        console.log("ablogs", blogsData.data);
+        console.log("articlesData", articlesData.data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -74,7 +77,7 @@ export default function SingleBlogPage() {
     };
 
     fetchBlogs();
-  }, []);
+  }, [id, api]);
 
   return (
     <div className={`w-full bg-[#FCFCFC] ${locale === "fa" ? "rtl" : "ltr"}`}>
@@ -121,73 +124,53 @@ export default function SingleBlogPage() {
               </p>
               <Image
                 src={
-                  trendingTopics.Image?.[0]?.url &&
-                  `http://localhost:1337${trendingTopics.Image[0].url}`
+                  trendingTopics.image?.[0]?.url &&
+                  `http://localhost:1337${trendingTopics.image[0].url}`
                 }
                 alt={"Blog Image"}
                 width={952}
                 height={450}
                 className="py-6 h-[350px] lg:h-[450px]"
               />
-              <p className="text-dark text-lg leading-[22.5px] font-light">
-                <p className="text-dark text-lg leading-[22.5px] font-light">
-                  {trendingTopics.Content
-                    ? trendingTopics.Content.split("\n\n")[0]
-                    : ""}
-                </p>
-                {/* First paragraph */}
-              </p>
-              <p className="mt-6 text-dark text-lg leading-[22.5px] font-light">
-                <p className="text-dark text-lg leading-[22.5px] font-light">
-                  {trendingTopics.Content
-                    ? trendingTopics.Content.split("\n\n")[1]
-                    : ""}
-                </p>
-              </p>
-              <div className="py-16 md:py-20 flex items-center gap-6">
-                <Image
-                  src="/assets/comma.svg"
-                  alt="comma"
-                  width={92}
-                  height={80}
-                  className="w-[74px] h-[64px] md:w-[92px] md:h-[80px]"
-                />
-                <p className="text-dark text-lg leading-[22.5px] font-light">
-                  <p className="text-dark text-lg leading-[22.5px] font-light">
-                    {trendingTopics.Content
-                      ? trendingTopics.Content.split("\n\n")[2]
-                      : ""}
-                  </p>
-                </p>
-              </div>
-              <h2 className="text-[24px] leading-[30px] font-bold text-dark">
-                More on {trendingTopics.title}
-              </h2>
-              <p className="mt-4 text-dark text-lg leading-[22.5px] font-light">
-                <p className="text-dark text-lg leading-[22.5px] font-light">
-                  {trendingTopics.Content
-                    ? trendingTopics.Content.split("\n\n")[3]
-                    : ""}
-                </p>
-              </p>
-              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                {trendingTopics?.Image?.length > 1 &&
-                  trendingTopics.Image.slice(0, 2).map((img, index) => (
-                    <img
-                      key={index}
-                      src={`http://localhost:1337${img.url}`}
-                      alt={img.name}
-                      className="rounded-lg w-full h-[400px] object-cover"
-                    />
-                  ))}
-              </div>
-              <p className="mt-4 text-dark text-lg leading-[22.5px] font-light">
-                <p className="text-dark text-lg leading-[22.5px] font-light">
-                  {trendingTopics.Content
-                    ? trendingTopics.Content.split("\n\n")[4]
-                    : ""}
-                </p>
-              </p>
+              {Array.isArray(trendingTopics?.Content) &&
+                trendingTopics?.Content.map((item, index) => {
+                  const paragraphText = item?.children?.[0]?.text?.trim();
+
+                  return (
+                    <Fragment key={index}>
+                      {/* Render paragraph if it has text */}
+                      {paragraphText && (
+                        <p className="mt-4 text-dark text-lg leading-[22.5px] font-light">
+                          {paragraphText}
+                        </p>
+                      )}
+
+                      {/* Show images after 3rd paragraph */}
+                      {index === 2 && trendingTopics?.image?.length > 1 && (
+                        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                          {trendingTopics.image
+                            .slice(0, 2)
+                            .map((img, imgIndex) => (
+                              <img
+                                key={imgIndex}
+                                src={`http://localhost:1337${img.url}`}
+                                alt={img?.name || "Image"}
+                                className="rounded-lg w-full h-[400px] object-cover"
+                              />
+                            ))}
+                        </div>
+                      )}
+
+                      {/* Show title after 4th paragraph */}
+                      {index === 3 && (
+                        <h2 className="mt-4 text-[24px] leading-[30px] font-bold text-dark">
+                          More on {trendingTopics?.title}
+                        </h2>
+                      )}
+                    </Fragment>
+                  );
+                })}
+
               <div className="mt-6 flex items-center gap-4">
                 <span className="text-dark text-lg leading-[22.5px] font-light">
                   Share this article:
@@ -246,11 +229,11 @@ export default function SingleBlogPage() {
                     >
                       <Image
                         src={
-                          post.Image?.[0]?.url
-                            ? `http://localhost:1337${post.Image[0].url}`
+                          post.image?.[0]?.url
+                            ? `http://localhost:1337${post.image[0].url}`
                             : "/assets/articles/article1.jpg"
                         }
-                        alt={post.title}
+                        alt={post?.title || "Article Image"}
                         width={100}
                         height={100}
                         className="rounded-lg object-cover min-w-[100px] min-h-[100px]"
@@ -311,7 +294,7 @@ export default function SingleBlogPage() {
                       ? `http://localhost:1337${post.image[0].url}`
                       : "/assets/articles/article1.jpg"
                   }
-                  alt={post.title}
+                  alt={post?.title || "Article Image"}
                   width={160}
                   height={160}
                 />

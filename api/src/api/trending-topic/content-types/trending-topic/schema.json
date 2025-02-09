@@ -4,7 +4,8 @@
   "info": {
     "singularName": "trending-topic",
     "pluralName": "trending-topics",
-    "displayName": "Trending Topic"
+    "displayName": "Trending Topic",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,18 +25,19 @@
       "type": "uid",
       "targetField": "title"
     },
-    "Image": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "Content": {
-      "type": "richtext"
+      "type": "blocks"
     }
   }
 }

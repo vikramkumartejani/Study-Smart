@@ -40,29 +40,6 @@ export default function Mag() {
     fetchBlogs();
   }, []);
 
-  // Define image arrays for each section
-  const recentArticleImages = [
-    "/assets/articles/article1.jpg",
-    "/assets/articles/article2.jpg",
-    "/assets/articles/article3.jpg",
-    "/assets/articles/article4.jpg",
-    "/assets/articles/article5.jpg",
-    "/assets/articles/article6.jpg",
-    "/assets/articles/article7.jpg",
-    "/assets/articles/article8.jpg",
-    "/assets/articles/article9.jpg",
-    "/assets/articles/article10.jpg",
-    "/assets/articles/article11.jpg",
-    "/assets/articles/article12.jpg",
-  ];
-
-  const trendingTopicImages = [
-    "/assets/trending/topic1.jpg",
-    "/assets/trending/topic2.jpg",
-    "/assets/trending/topic3.jpg",
-    "/assets/trending/topic4.jpg",
-  ];
-
   return (
     <div className={`w-full bg-[#FCFCFC] ${locale === "fa" ? "rtl" : "ltr"}`}>
       {/* Hero Article */}
@@ -75,8 +52,8 @@ export default function Mag() {
               <div className="relative">
                 <Image
                   src={
-                    blogs[0].Image?.[0]?.url
-                      ? `http://localhost:1337${blogs[0].Image[0].url}`
+                    blogs[0].image?.[0]?.url
+                      ? `http://localhost:1337${blogs[0].image[0].url}`
                       : "/assets/articles/article1.jpg"
                   }
                   alt={blogs[0].title}
@@ -96,7 +73,7 @@ export default function Mag() {
                   {blogs[0].Description}
                 </p>
                 <Link
-                  href={`/single-mag-page/${blogs[0].slug}`}
+                  href={`/single-mag-page/${blogs[0].slug}?api=blog`}
                   className="inline-flex items-center justify-center text-dark hover:text-white text-[18px] font-medium border-2 border-[#1848AD] w-full lg:w-[202px] h-[55px] rounded-[31px] group hover:bg-[#1848AD] transition-all duration-300"
                 >
                   <span className="mr-2">{t("magPage.hero.readMore")}</span>
@@ -132,8 +109,8 @@ export default function Mag() {
               >
                 <Image
                   src={
-                    link.Image?.[0]?.url
-                      ? `http://localhost:1337${link.Image[0].url}`
+                    link.image?.[0]?.url
+                      ? `http://localhost:1337${link.image[0].url}`
                       : "/assets/articles/article1.jpg"
                   }
                   alt={link.alt}
@@ -152,7 +129,7 @@ export default function Mag() {
                     {new Date(link.publishedAt).toLocaleDateString()}
                   </span>
                   <Link
-                    href={`/single-mag-page/${link.slug}`}
+                    href={`/single-mag-page/${link.slug}?api=blog`}
                     className="inline-flex items-center text-[#6D8CAD] text-[14px] font-normal leading-[17.5px]"
                   >
                     <span className="sr-only">Read more</span>
@@ -243,8 +220,8 @@ export default function Mag() {
             >
               <Image
                 src={
-                  topic.Image?.[0]?.url
-                    ? `http://localhost:1337${topic.Image[0].url}`
+                  topic.image?.[0]?.url
+                    ? `http://localhost:1337${topic.image[0].url}`
                     : "/assets/articles/article1.jpg"
                 }
                 alt={topic.alt}

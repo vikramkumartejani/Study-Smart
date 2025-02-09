@@ -444,6 +444,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
 export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
   collectionName: 'blog_posts';
   info: {
+    description: '';
     displayName: 'Blog Post';
     pluralName: 'blog-posts';
     singularName: 'blog-post';
@@ -457,7 +458,7 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Text;
-    Image: Schema.Attribute.Media<
+    image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
@@ -583,6 +584,7 @@ export interface ApiTrendingTopicTrendingTopic
   extends Struct.CollectionTypeSchema {
   collectionName: 'trending_topics';
   info: {
+    description: '';
     displayName: 'Trending Topic';
     pluralName: 'trending-topics';
     singularName: 'trending-topic';
@@ -591,13 +593,13 @@ export interface ApiTrendingTopicTrendingTopic
     draftAndPublish: true;
   };
   attributes: {
-    Content: Schema.Attribute.RichText;
+    Content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.Date;
     Description: Schema.Attribute.Text;
-    Image: Schema.Attribute.Media<
+    image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
